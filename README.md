@@ -1,5 +1,7 @@
 # Agent Skills Factory
 
+<img src="./Screenshot.jpg" />
+
 Personal collection of AI agent skills, installable via the skills CLI.
 
 ## What's in here
