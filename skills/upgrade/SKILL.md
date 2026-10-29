@@ -1,8 +1,7 @@
 ---
 name: upgrade
-description: Self-improvement loop for the user's Claude setup. "/upgrade u3 u7" plans and applies those items from the Upgrades inbox (sent by the Toolbox mod's Upgrades tab); "/upgrade" alone reviews the current conversation and adds what it finds to the inbox. Replaces /retro. Run when the user types "/upgrade" or asks to review this conversation for anything to save or optimize.
+description: Self-improvement loop for the user's Claude setup. "/upgrade u3 u7" plans and applies those items from the Upgrades inbox (sent by the Toolbox mod's Upgrades tab); "/upgrade" alone reviews the current conversation and adds what it finds to the inbox. Replaces /retro. Run when the user types "/upgrade", asks to "apply upgrades u3 u7" (the Toolbox sends this), or asks to review this conversation for anything to save or optimize.
 argument-hint: "[item ids, e.g. u3 u7]"
-disable-model-invocation: true
 ---
 
 # Upgrade
