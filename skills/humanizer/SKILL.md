@@ -75,7 +75,7 @@ Only when the user provides a sample of their own writing. Read it first and not
 Edit mode:
 
 1. The full final text (or the changed sections, for long files).
-2. **What changed**: 3 to 6 short bullets naming the main fixes, plus anything you flagged for the user (a claim with no source, a cut you weren't sure about).
+2. **What changed**: up to 5 short bullets naming the main fixes (one or two is fine for a light edit). Always list any claim you cut rather than rephrased, and anything to flag (a claim with no source, a cut you weren't sure about).
 
 Don't show the draft, the self-audit or the score unless the user asks. See `references/examples.md` for edit, detect and voice-preserving examples.
 

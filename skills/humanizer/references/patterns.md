@@ -14,7 +14,7 @@ The strongest and most frequent tells. Act on one sighting.
 
 ### 1. Not X but Y (binary contrasts, negative listing)
 
-**Watch for:** not X but Y; not just / not only / not merely X, but Y; it's not X, it's Y; X rather than Y; the question isn't X, it's Y; X isn't the problem, Y is; it feels like X, it's actually Y; stops being X and starts being Y; not because X, because Y; the contrast split across sentences ("This does not mean X. It means Y."); negative listing ("Not a X. Not a Y. A Z."); a clipped negative tail ("..., no guessing").
+**Watch for:** not X but Y; not just / not only / not merely X, but Y; it's not X, it's Y; X rather than Y; the question isn't X, it's Y; X isn't the problem, Y is; it feels like X, it's actually Y; stops being X and starts being Y; not because X, because Y; the contrast split across sentences ("This does not mean X. It means Y."); negative listing ("Not a X. Not a Y. A Z."); a clipped negative tail ("..., no guessing"); the positive twin "Most people do X. The smart ones do Y."
 **Problem:** The negative half names something nobody claimed so the positive half sounds bigger. State Y directly. Keep a contrast only when the negative half corrects a belief the reader actually holds, or both halves carry information.
 **Before:** It's not just about the beat riding under the vocals; it's part of the aggression and atmosphere. It's not merely a song, it's a statement.
 **After:** The heavy beat adds to the aggressive tone.
@@ -43,7 +43,7 @@ The strongest and most frequent tells. Act on one sighting.
 - Announcements: Let's dive in, let's explore, let's break this down, here's what you need to know, now let's look at, without further ado, heads up, quick note, let me walk you through, I want to explore.
 - Staged candor: Here's the thing, Here's what I mean, Here's why, The thing is, Let me be clear, I'll be honest, Let's be honest, Real talk, Honestly? / Look, as a standalone opener, It turns out, The truth is.
 - Faux insight: This is the part most people skip, What most people get wrong, Here's what nobody tells you, The part everyone misses.
-- Rhetorical setups: What if I told you..., Think about it:, Plot twist:, Spoiler:, Hint:, a question the next sentence answers ("Is it worth it? It depends.").
+- Rhetorical setups (a trailing "Think about it." is a §2 closer): What if I told you..., Think about it:, Plot twist:, Spoiler:, Hint:, a question the next sentence answers ("Is it worth it? It depends.").
 - Colon reveals: a noun phrase, a colon, then a dramatic lowercase reveal ("The best part: it learns." "The detail that makes it work: a separate agent grades it.").
 **Problem:** The writer announces the point, or stages candor or expertise, instead of making the point. Remove the run-up and state the claim. "Honestly" or "look" inside a casual sentence is ordinary; the tell is the standalone opener before a routine claim. Use colons for lists, labels and quotes, not fake drama, and prefer sentence case after a colon.
 **Before:** The part everyone misses: distribution is the real moat.
@@ -79,7 +79,7 @@ Shapes and punctuation applied everywhere, whether the meaning asks for them or 
 
 ### 8. Dashes as the universal connector
 
-**Rule:** Short copy (posts, emails, bios, cover letters, commit messages): no em dashes (—) or en dashes (–) used as punctuation. Longer drafts: at most 1 or 2, only where they clearly beat a comma, period, colon or parentheses. Double hyphens (` -- `) count. If the writer's sample uses dashes, match its rate. Leave dashes inside code, commands, paths, URLs and number ranges alone.
+**Default:** Short copy (posts, emails, bios, cover letters, commit messages): no em dashes (—) or en dashes (–) used as punctuation. Longer drafts: at most 1 or 2, only where they clearly beat a comma, period, colon or parentheses. Double hyphens (` -- `) count. If the writer's sample, or their own clearly human writing in the draft, uses dashes as a habit, keep about that rate. Leave dashes inside code, commands, paths, URLs and number ranges alone.
 **Problem:** A dash lets the writer skip deciding how two clauses relate. One dash is *weak alone*; a text full of them is not.
 **Before:** The new policy — announced without warning — affects thousands of workers.
 **After:** The new policy, announced without warning, affects thousands of workers.

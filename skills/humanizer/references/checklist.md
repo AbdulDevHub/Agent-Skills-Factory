@@ -11,6 +11,7 @@ Ask: "What makes this obviously AI generated?" List the remaining tells to yours
 - Did the edit keep the user's point and every supported claim?
 - Did it add any fact, name, number, date, quote, citation, example or opinion not in the source or given by the user? (Fiction is exempt.) An added fact is an error. If a sentence needs a detail you don't have, write a simpler sentence or ask.
 - Were vague attributions given a real source, or flagged for the user when none exists?
+- Is every claim you cut (rather than rephrased) named in What changed, so the user can put it back?
 
 ## 3. Voice
 
@@ -50,7 +51,7 @@ Rate 1 to 10, privately:
 | Authenticity | Sounds like this particular human? |
 | Density | Anything left to cut? |
 
-Below 35/50: revise once more. Show the score only if the user asks for it.
+Below 35/50: revise once more. Skip the score for inputs under about three sentences. Show it only if the user asks.
 
 ## 7. Detect mode
 

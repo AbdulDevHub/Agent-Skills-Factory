@@ -4,7 +4,7 @@ Leave any of these alone inside quotes, titles, proper names, technical terms (a
 
 ## Cut on sight
 
-Strong tells, especially in clusters. Replace with the plain word or the specific claim.
+Strong tells, especially in clusters. Replace with the plain word or the specific claim. Voice still wins: if the writer clearly uses one of these naturally (a single "valuable" in a casual note), leave it.
 
 additionally, align with, bolster/bolstered, crucial, deep dive, delve, elevate, embark, empower, enduring, enhance, ever-evolving, facilitate, foster/fostering, garner, harness, highlight (verb), interplay, intricate/intricacies, key (adjective), landscape (abstract), leverage (verb), meticulous/meticulously, multifaceted, paradigm shift, paramount, pivotal, quietly (as in "quietly reshaping"), realm, robust (figurative), seamless, showcase, streamline, supercharge, tapestry, testament, transformative, underscore (verb), utilize, valuable, vibrant, beacon, cutting-edge, game changer, this is huge, this changes everything.
 
