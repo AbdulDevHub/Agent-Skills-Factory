@@ -36,8 +36,15 @@ if (cmd === 'show') {
   const item = inbox.items.find(i => i.id === id)
   if (!item) throw new Error(`${id} is not in the inbox`)
   item.status = cmd
-  if (cmd === 'applied') item.appliedMs = Date.now()
-  item.appliedNote = note
+  delete item.rank
+  if (cmd === 'applied') {
+    item.appliedMs = Date.now()
+    item.appliedNote = note
+  } else {
+    // The mod forgets a dropped item 30 days after droppedMs.
+    item.droppedMs = Date.now()
+    item.dropReason = note || 'not needed'
+  }
   save(inbox)
   console.log(`${id} → ${cmd}`)
 } else if (cmd === 'add') {

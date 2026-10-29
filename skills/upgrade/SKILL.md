@@ -34,8 +34,8 @@ node ~/.claude/skills/upgrade/inbox.mjs add '[{"kind":"rule","title":"…","deta
 5. **Record** each result with `inbox.mjs`:
    - applied: one-line note naming the file(s) written,
    - dropped: the reason,
-   - items the user declined: leave open, so they can snooze them from the tab.
-6. **Report** in a few lines: what was written where, anything dropped or skipped, and anything the user must do (restart for settings, `/reload-plugins` for mods, push `~/.agents`). Mention that the Toolbox's Applied view keeps the log.
+   - items the user declined: leave open, so they can drop them from the tab.
+6. **Report** in a few lines: what was written where, anything dropped or skipped, and anything the user must do (restart for settings, `/reload-plugins` for mods, push `~/.agents`).
 
 ## Without ids: review this conversation
 
