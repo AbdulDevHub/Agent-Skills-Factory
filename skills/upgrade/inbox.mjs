@@ -3,7 +3,7 @@
 //   node inbox.mjs applied u3 "what was written where"
 //   node inbox.mjs dropped u3 "why it is no longer needed"
 //   node inbox.mjs add '<json array>' [project]  add items: [{kind,title,detail,target}]
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { dirname, join } from 'node:path'
 
@@ -15,9 +15,12 @@ const load = () =>
     ? JSON.parse(readFileSync(FILE, 'utf8'))
     : { version: 1, nextId: 1, lastScanMs: 0, scanned: {}, items: [] }
 
+// Write a temp file and rename it over, so the Toolbox mod never reads half a file.
 const save = inbox => {
   mkdirSync(dirname(FILE), { recursive: true })
-  writeFileSync(FILE, `${JSON.stringify(inbox, null, 2)}\n`)
+  const tmp = `${FILE}.${process.pid}.tmp`
+  writeFileSync(tmp, `${JSON.stringify(inbox, null, 2)}\n`)
+  renameSync(tmp, FILE)
 }
 
 const [cmd, ...args] = process.argv.slice(2)
