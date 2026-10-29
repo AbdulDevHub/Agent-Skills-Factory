@@ -184,15 +184,6 @@
       "installedAt": "2026-06-24T19:24:25.020Z",
       "updatedAt": "2026-06-24T19:24:25.020Z"
     },
-    "humanizer": {
-      "source": "NousResearch/hermes-agent",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/NousResearch/hermes-agent.git",
-      "skillPath": "skills/creative/humanizer/SKILL.md",
-      "skillFolderHash": "bf06df3e223f24d6f16b2304810c7df280f4b13d",
-      "installedAt": "2026-06-24T19:25:40.811Z",
-      "updatedAt": "2026-06-24T19:25:40.811Z"
-    },
     "code-reviewer": {
       "source": "Shubhamsaboo/awesome-llm-apps",
       "sourceType": "github",

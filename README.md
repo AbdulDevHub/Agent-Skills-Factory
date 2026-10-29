@@ -9,6 +9,7 @@ Personal collection of AI agent skills, installable via the skills CLI.
 - **`context-bootstrap`** — scaffolds a new project's foundational AI-context docs in one pass: `AGENTS.md`, architecture overview, build plan, code standards, library docs, progress tracker, project overview, and UI registry/rules/tokens references.
 - **`context7-mcp`** — tells an agent when and how to pull current library/API docs from the Context7 MCP server instead of relying on stale training data.
 - **`footer-note-comments`** — writes algorithm/interview-style code (LeetCode, HackerRank, etc.) with a numbered "footer notes" block instead of inline comments, so the code stays clean but non-obvious reasoning is still documented.
+- **`humanizer`** — removes AI writing patterns from prose while keeping the writer's voice, or flags them without rewriting (detect mode). Merged from blader/humanizer, petergyang/no-ai-slop and hardikpandya/stop-slop (all MIT).
 - **`git-reformat-history-agent`** — rewrites an entire repo's commit history into conventional-commits + gitmoji style, executed directly by an agent with terminal/git access.
 - **`markdownlint-fix`** — fixes or suppresses markdownlint warnings across a project, including configuring `.vscode/settings.json` and rule exceptions for cases that shouldn't be auto-fixed.
 
