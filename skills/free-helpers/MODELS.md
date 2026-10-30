@@ -1,7 +1,22 @@
 # What each free model is good for
 
 Update this file when a "Research new model …" upgrade item is applied. Keep each entry short and give its source.
-Last reviewed: 2026-10-29.
+Last reviewed: 2026-10-30.
+
+## What's live in the hub (tested 2026-10-30)
+Keys added: AI Studio, Groq, NVIDIA NIM and OpenRouter. Cerebras needs a credit card and Mistral costs money, so both were skipped.
+
+The user restricted each provider to one model:
+
+| Alias | Model (hub id) | Provider | Speed | Notes |
+|---|---|---|---|---|
+| `fast` | `qwen3.8-27b` | Groq | ~2s | Clean answers. The default for bulk work; `auto` and `auto:smart` usually land here too |
+| `ultra` | `nemotron-3-ultra-550b` | NVIDIA | ~2s | Big reasoning model. Its reasoning sometimes leaks into the answer, so strip it or ask for "answer only" |
+| `code` | `poolside-laguna-s-2.1` | OpenRouter `:free` | ~2s | Coding model. About 50 requests/day on a zero-balance key |
+| `gemini` | `gemini-flash` (→ gemini-flash-latest) | AI Studio | 50–60s | Slow, close to the hub's 60s upstream timeout, and only about 20 requests/day. Use it only where Gemini matters (SVG). On a timeout or 429, `helper ask` falls back to `auto` unless `--strict` |
+
+- `helper code` with the `auto:smart` route fixed a real bug through Copilot in about 35s; the diff applied cleanly.
+- No image or embedding models are available with these keys. Images go through `helper handoff` to Antigravity (Nano Banana).
 
 ## Gemini 3.8 Flash (alias `gemini`; AI Studio free key via FreeLLMAPI; also in Antigravity as Low/Medium/High)
 - **Good at:**
@@ -14,9 +29,7 @@ Last reviewed: 2026-10-29.
 - **Free limits:**
   - AI Studio key: about 20 requests/day and 5/min for 3.8 Flash (check the AI Studio console). Save it for jobs where Gemini matters.
   - Antigravity's weekly quota is much bigger, but it is only reachable through a handoff.
-- **Images:**
-  - Nano Banana (Gemini image) works in Antigravity. Use a handoff that asks it to generate images.
-  - Whether the AI Studio free key can also make images through FreeLLMAPI `/v1/images/generations` is not confirmed yet; test it once the keys are in.
+- **Images:** Nano Banana (Gemini image) works in Antigravity, so use a handoff that asks it to generate images. The hub has no image model for the AI Studio free key (checked 2026-10-30).
 - **Sources:** [DataCamp](https://www.datacamp.com/blog/gemini-3-8-flash-cyber), [Google Cloud guide](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-3-8-flash), [302.AI review](https://medium.com/@302.AI/gemini-3-8-flash-review-googles-smartest-flash-yet-eea96b31e076), [HN thread](https://news.ycombinator.com/item?id=49537553), [free-tier thread](https://discuss.ai.google.dev/t/gemini-3-8-flash-free-tier-20-rpd-is-too-limited-for-practical-evaluation/180609)
 
 ## Antigravity free plan (handoff only)
@@ -24,12 +37,14 @@ Last reviewed: 2026-10-29.
 - **Quota:** resets weekly.
 - **Use it for:** big jobs where a long agent run is fine, image generation, and a free extra Claude opinion.
 
-## Bulk / fast pool (alias `fast`)
-- **Groq** (Llama, Qwen, GPT-OSS): fastest, about 30 requests/min. Good for summaries, classification and format conversion.
-- **Cerebras:** about 1M tokens/day, very fast. Same uses as Groq.
-- **NVIDIA NIM:** about 40 requests/min, with credits. Has GLM, Devstral and Nemotron, which are decent for code drafts.
-- **Mistral** free plan: a general-purpose backup.
-- **OpenRouter `:free` models:** about 50 requests/day with no credit. It's a wide catalogue, so use it as a fallback.
+## Provider limits
+- **Groq:** fastest, about 30 requests/min.
+- **NVIDIA NIM:** about 40 requests/min, with credits.
+- **OpenRouter `:free`:** about 50 requests/day with no credit.
+- **Not set up:**
+  - Cerebras: needs a card.
+  - Mistral: paid.
+- **More capacity:** add a model or provider in the FreeLLMAPI dashboard, then update the aliases in `~/.claude/helpers/config.json`.
 - **Sources:** [FreeLLMAPI catalogue](https://freellmapi.co/models.html), [awesome-freellm-apis](https://github.com/open-free-llm-api/awesome-freellm-apis), [toolhalla guide](https://toolhalla.ai/blog/best-free-ai-apis-2026)
 
 ## Rules of thumb

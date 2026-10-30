@@ -34,7 +34,14 @@ The blocked list is in `~/.claude/helpers/blocklist.txt`.
 | Models | `helper models` (lists the hub's models), `helper status` |
 | Privacy dry run | `helper guard <path>…` or `… \| helper guard -` |
 
-Aliases: `smart` = `auto:smart` (reasoning, Gemini first), `fast` = `auto:fast` (bulk; Groq/Cerebras first), and `gemini` = a fixed Gemini model ID. Update `gemini` when a "Research new model" item is applied. Aliases live in `~/.claude/helpers/config.json` under `aliases`.
+Aliases live in `~/.claude/helpers/config.json` under `aliases`; the current models and their speeds are in `MODELS.md`.
+- `fast` = Qwen on Groq, for bulk work.
+- `smart` = the hub's `auto:smart` route.
+- `ultra` = Nemotron Ultra.
+- `code` = Poolside on OpenRouter.
+- `gemini` = `gemini-flash`, which tracks Google's latest Flash. It is slow (about 1 min) and has about 20 requests a day.
+
+A pinned model that is busy falls back to `auto` (the reply's `answered by` line says so); add `--strict` to stop that.
 - A prompt that starts with `--` goes after a lone `--`.
 - Free models make things up and miss details. Check facts and code before using them.
 - Give helpers small, self-contained prompts with the files attached. They don't see this conversation.

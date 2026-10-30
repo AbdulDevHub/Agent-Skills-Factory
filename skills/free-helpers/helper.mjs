@@ -1,5 +1,6 @@
 // Hands jobs to free models through the FreeLLMAPI hub, behind a privacy guard. Data lives in ~/.claude/helpers.
-//   helper ask [--model smart|fast|gemini|<id>] [--file f]... [--system s] [--out f] "prompt"   ("-" reads stdin)
+//   helper ask [--model smart|fast|gemini|<id>] [--file f]... [--system s] [--out f] [--strict] "prompt"   ("-" reads stdin)
+//     a pinned model that is rate-limited or failing falls back to "auto" unless --strict
 //   helper code [--model <id>] [--gh] "task"     Copilot CLI edits a history-free copy of HEAD (file tools only), prints a diff
 //   helper code --list | --clean <id>
 //   helper handoff [--file f]... [--inline] [--copy] "task"   prompt file for the user to paste into Antigravity
@@ -278,12 +279,23 @@ const ask = async argv => {
     ...(flags.system ? [{ role: 'system', content: flags.system }] : []),
     { role: 'user', content: fileBlock ? `${fileBlock}\n\n${prompt}` : prompt },
   ]
-  const model = modelFor(flags.model ?? 'smart')
+  let model = modelFor(flags.model ?? 'smart')
   const base = await ensureHub()
-  const { json, routed } = await hubFetch(base, '/chat/completions', {
+  const send = m => hubFetch(base, '/chat/completions', {
     method: 'POST',
-    body: JSON.stringify({ model, messages, ...(flags['max-tokens'] ? { max_tokens: Number(flags['max-tokens']) } : {}) }),
+    body: JSON.stringify({ model: m, messages, ...(flags['max-tokens'] ? { max_tokens: Number(flags['max-tokens']) } : {}) }),
   })
+  let reply
+  try {
+    reply = await send(model)
+  } catch (err) {
+    // A pinned model on cooldown or failing upstream: let the router pick another one instead of giving up.
+    if (model.startsWith('auto') || flags.strict || !/→ (429|502|503):/.test(err.message)) throw err
+    say(`${model} unavailable (${err.message.match(/→ (\d+)/)[1]}); falling back to auto`)
+    model = 'auto'
+    reply = await send(model)
+  }
+  const { json, routed } = reply
   const answer = json.choices?.[0]?.message?.content ?? ''
   const servedBy = routed ?? json.model ?? model
   if (flags.out) writeFileSync(flags.out, answer)
@@ -465,7 +477,8 @@ const checkModels = async flags => {
   if (!flags.force && Date.now() - (state.lastModelCheckMs ?? 0) < WEEK_MS) return quiet('checked less than a week ago')
   const base = await findHub()
   if (!base) return quiet('hub not running; will try next session')
-  const ids = (await hubFetch(base, '/models')).json.data.map(m => m.id)
+  // Only models the user's keys can actually serve; the hub also lists its whole catalog.
+  const ids = (await hubFetch(base, '/models')).json.data.filter(m => m.available !== false).map(m => m.id)
   const snap = readJson(SNAPSHOT, null)
   const saveSnapshot = () => {
     writeJson(SNAPSHOT, { savedMs: Date.now(), ids })
@@ -477,7 +490,10 @@ const checkModels = async flags => {
   }
   const fresh = ids.filter(id => !snap.ids.includes(id) && !NOT_CHAT.test(id))
   const current = cfg.aliases.gemini
-  const gemini = fresh.filter(id => /gemini-\d/.test(id) && cmpVersion(version(id), version(current)) >= 0 && !id.includes(current))
+  // Compare against the newest Gemini already seen (the alias may be a moving name like gemini-flash).
+  const seen = snap.ids.filter(id => /gemini-\d/.test(id) && !NOT_CHAT.test(id)).map(version)
+  const newest = [version(current), ...seen].sort((a, b) => cmpVersion(b, a))[0]
+  const gemini = fresh.filter(id => /gemini-\d/.test(id) && cmpVersion(version(id), newest) >= 0)
   const families = cfg.watchFamilies.filter(f => f !== 'gemini')
   const others = fresh.filter(id => !gemini.includes(id) && families.some(f => id.toLowerCase().includes(f))).slice(0, 8)
   const items = []
