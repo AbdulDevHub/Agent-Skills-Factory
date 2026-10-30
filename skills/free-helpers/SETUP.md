@@ -3,7 +3,7 @@
 ## FreeLLMAPI (the hub)
 - **Install:** the Windows installer from https://github.com/tashfeenahmed/freellmapi/releases/latest (`FreeLLMAPI-Setup-<ver>.exe`). It runs from the tray, with no password.
 - **Data:** `%APPDATA%\FreeLLMAPI\`, which holds `freeapi.db` (encrypted keys), `config.json` (the port) and `logs\freeapi.log`.
-- **Address:** `helper` finds the port automatically: first the port in `config.json`, then 31415, then 3001. You can pin it with `hubUrl` in `~/.claude/helpers/config.json`.
+- **Address:** `helper` finds the port automatically: first the port in `config.json`, then 31415. It accepts only a real `/v1/models` answer that works with the key. You can pin it with `hubUrl` in `~/.claude/helpers/config.json`.
 - **Provider keys:** the user adds them in the dashboard (tray → Open Dashboard → Keys). Keys never go through chat.
   - AI Studio: https://aistudio.google.com/apikey
   - OpenRouter: the free key only
@@ -25,8 +25,9 @@
   - Set `COPILOT_PROVIDER_BASE_URL=<hub>/v1`, `COPILOT_PROVIDER_API_KEY=<unified key>` and `COPILOT_MODEL=<id>`.
   - Optionally set `COPILOT_PROVIDER_MAX_PROMPT_TOKENS` and `COPILOT_PROVIDER_MAX_OUTPUT_TOKENS`.
   - Full reference: `copilot help providers`.
-- **Running it without prompts:** `copilot -p "<task>" --silent --allow-all-tools --sandbox`.
-  - Add `--deny-tool 'shell(git push)'` to block pushes; denies always win over allows.
+- **How `helper code` runs it:** `copilot -p "<task>" --silent --allow-all-tools --deny-tool shell --deny-tool url --disallow-temp-dir --disable-builtin-mcps --disable-mcp-server <each>`.
+  - Denies always win over allows. With no shell, the file tools are limited to the working folder.
+  - Why no `--sandbox`: Copilot's sandbox still lets shell commands read the whole user profile, which includes `.ssh` and the course folders.
   - Permission rules: `copilot help permissions`. Sandboxing: `copilot help sandbox`.
 - **GitHub's own models:** omit the provider settings and pass `--model <name>`. This spends the student plan's AI credits; check with `/usage` or `/model` in an interactive `copilot` session.
 - **Config:** `copilot config --list` and `copilot help config`.
@@ -56,6 +57,6 @@
   - `blocklist.txt`
   - `log.jsonl`
   - `handoffs/`
-  - `worktrees/`
+  - `runs/` (code copies and diffs; `helper code --list` removes copies older than a week)
   - `models-snapshot.json` and `state.json`
 - **Weekly model watch:** the SessionStart hook in `~/.claude/settings.json` runs `helper models --check --quiet`.
