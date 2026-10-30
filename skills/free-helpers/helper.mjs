@@ -33,7 +33,7 @@ const MARKER = '.no-free-helpers'
 const DEFAULTS = {
   hubUrl: '', // empty = the FreeLLMAPI desktop port (its config.json, else 31415)
   hubKey: '', // or FREELLMAPI_KEY
-  hubApp: join(process.env.LOCALAPPDATA ?? '', 'Programs', 'FreeLLMAPI', 'FreeLLMAPI.exe'),
+  hubApp: join(process.env.LOCALAPPDATA ?? '', 'Programs', 'freellmapi-desktop', 'FreeLLMAPI.exe'),
   aliases: { smart: 'auto:smart', fast: 'auto:fast', gemini: 'gemini-3.8-flash', embed: 'nomic-embed-text' },
   codeModel: 'auto:smart',
   maxPromptTokens: 100000,

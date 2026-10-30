@@ -1,7 +1,7 @@
 # Setup and config reference
 
 ## FreeLLMAPI (the hub)
-- **Install:** the Windows installer from https://github.com/tashfeenahmed/freellmapi/releases/latest (`FreeLLMAPI-Setup-<ver>.exe`). It runs from the tray, with no password.
+- **Install:** the Windows installer from https://github.com/tashfeenahmed/freellmapi/releases/latest (`FreeLLMAPI-Setup-<ver>.exe`). It installs to `%LOCALAPPDATA%\Programs\freellmapi-desktop\FreeLLMAPI.exe`, runs from the tray, and needs no password.
 - **Data:** `%APPDATA%\FreeLLMAPI\`, which holds `freeapi.db` (encrypted keys), `config.json` (the port) and `logs\freeapi.log`.
 - **Address:** `helper` finds the port automatically: first the port in `config.json`, then 31415. It accepts only a real `/v1/models` answer that works with the key. You can pin it with `hubUrl` in `~/.claude/helpers/config.json`.
 - **Provider keys:** the user adds them in the dashboard (tray → Open Dashboard → Keys). Keys never go through chat.
