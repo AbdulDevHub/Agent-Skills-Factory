@@ -1,0 +1,32 @@
+{
+  "name": "agent-skills-factory",
+  "owner": {
+    "name": "Abdul Khan",
+    "url": "https://github.com/AbdulDevHub"
+  },
+  "metadata": {
+    "description": "Open-source Agent Skills (SKILL.md) for Claude Code, Codex, Cursor and other coding agents: project context bootstrapping, gitmoji commits, AI-text humanizing, web SEO and more.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "agent-skills-factory",
+      "description": "Developer-workflow skills: AGENTS.md/context scaffolding, gitmoji + conventional commits, git history rewriting, humanizer, web SEO, markdownlint fixes, Context7 docs lookup, interview-style code notes and free-model offloading.",
+      "source": "./",
+      "strict": false,
+      "keywords": ["agent-skills", "skill-md", "claude-code", "agents-md", "gitmoji", "seo", "humanizer"],
+      "skills": [
+        "./skills/context-bootstrap",
+        "./skills/setup-agent-context",
+        "./skills/gitmoji-commit",
+        "./skills/git-reformat-history-agent",
+        "./skills/humanizer",
+        "./skills/web-seo-optimization",
+        "./skills/markdownlint-fix",
+        "./skills/context7-mcp",
+        "./skills/footer-note-comments",
+        "./skills/free-helpers"
+      ]
+    }
+  ]
+}
