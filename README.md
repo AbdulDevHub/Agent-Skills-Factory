@@ -29,6 +29,13 @@ Claude Code, as a plugin:
 /plugin install agent-skills-factory --marketplace AbdulDevHub/Agent-Skills-Factory
 ```
 
+On Claude Code older than 2.1.275, add the marketplace first:
+
+```text
+/plugin marketplace add AbdulDevHub/Agent-Skills-Factory
+/plugin install agent-skills-factory@agent-skills-factory
+```
+
 ## Skills
 
 | Skill | What it does |
@@ -50,7 +57,7 @@ Claude Code, as a plugin:
 
 This repo is also my live `~/.agents` folder, so it manages skills I didn't write. The interesting part is the tooling around that:
 
-- **Edits are detected automatically.** A session hook fingerprints each external skill at install time (`.skill-baseline.json`). If its content later changes without an upstream update, the skill counts as modified: it's un-ignored and committed.
+- **Edits are detected automatically.** A Claude Code session hook (kept outside this repo at `~/.claude/hooks/sync-skills.ps1`) fingerprints each external skill at install time (`.skill-baseline.json`). If its content later changes without an upstream update, the skill counts as modified: it's un-ignored and committed.
 - **Updates three-way merge.** [`scripts/update-skills.ps1`](./scripts/update-skills.ps1) runs `npx skills update`, then merges upstream changes into each locally edited skill with `git merge-file` (old upstream as the base, fetched by its locked tree hash). Clean merges are committed; conflicts are left as `<<<<<<<` markers.
 - **Everything is pinned.** Unmodified external skills are gitignored and recorded in `.skill-lock.json`, so `npx skills experimental_install` restores the exact set, like `npm ci`.
 
@@ -75,6 +82,6 @@ Issues and PRs are welcome, especially bug reports from running a skill in an ag
 
 ## License
 
-My skills and scripts are [MIT](./LICENSE). Skills adapted from other projects keep their original license, included in their folder.
+My skills and scripts are [MIT](./LICENSE). Skills adapted from other projects keep their original licenses (see the source links above).
 
 Built by [Abdul Khan](https://github.com/AbdulDevHub).
