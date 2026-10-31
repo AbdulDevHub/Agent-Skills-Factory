@@ -5,7 +5,7 @@ description: 'Commit the currently staged files with a gitmoji + conventional-co
 
 # Gitmoji commit
 
-Look at what is staged, write a gitmoji commit message, and run `git commit`. **Never push.** The user reviews and pushes themselves.
+Look at what is staged (staging everything first if nothing is), write a gitmoji commit message, and run `git commit`. **Never push.** The user reviews and pushes themselves.
 
 ## Message format
 
@@ -35,7 +35,7 @@ Examples:
 1. **Inspect the index.**
    - `git status --short` and `git diff --cached --name-status`
    - `git diff --cached --stat`, then `git diff --cached` (for big diffs, read per file or per group).
-   - If nothing is staged, say so and stop. Do not stage anything on your own.
+   - If nothing is staged, stage everything with `git add -A` (new, modified and deleted files), then re-run the inspection. Say in one line that you auto-staged. If the working tree is also clean, say there is nothing to commit and stop. Never auto-stage when something is already staged: commit only what the user staged.
    - Ignore pure noise (lockfiles, generated files) when deciding the message, but still commit them with the change that caused them.
 2. **Decide whether to split.** Most of the time: one commit. Split only when staged files clearly fall into separate concerns that a reviewer would want as separate commits, for example:
    - a bug fix plus an unrelated docs update,
