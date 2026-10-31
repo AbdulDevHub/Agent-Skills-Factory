@@ -10,10 +10,24 @@ $repo = Split-Path -Parent $PSScriptRoot
 $lockPath = Join-Path $repo '.skill-lock.json'
 function Invoke-RepoGit { git.exe -C $repo @args; if ($LASTEXITCODE) { throw "git $args failed" } }
 
+# Run the sync hook first: it un-ignores and commits any external skill edited since it last ran, so the update can't overwrite edits git never saw.
+$hook = Join-Path $env:USERPROFILE '.claude\hooks\sync-skills.ps1'
+if (Test-Path $hook) { '' | powershell -NoProfile -ExecutionPolicy Bypass -File $hook | Write-Host }
+
 $headLock = (Invoke-RepoGit show HEAD:.skill-lock.json) -join "`n" | ConvertFrom-Json
-if (git -C $repo status --porcelain) {
-  $lockDirty = git -C $repo status --porcelain -- .skill-lock.json
-  if (-not $lockDirty) { throw "~/.agents has uncommitted changes. Commit them first so nothing can be lost." }
+$dirty = @(git -C $repo status --porcelain)
+if ($dirty) {
+  # Merge-only mode: allowed only when the leftovers are an update the hook held back (lock file + overwritten edited skills).
+  $lockNow = Get-Content $lockPath -Raw | ConvertFrom-Json
+  $other = $dirty | Where-Object {
+    $p = $_.Substring(3).Trim('"')
+    if ($p -in '.skill-lock.json', '.skill-baseline.json') { return $false }
+    if ($p -match '^skills/([^/]+)/') { $n = $Matches[1]; return $headLock.skills.$n.skillFolderHash -eq $lockNow.skills.$n.skillFolderHash }
+    $true
+  }
+  if (-not ($dirty -match '\.skill-lock\.json') -or $other) {
+    throw "~/.agents has uncommitted changes. Commit them first so nothing can be lost:`n$($dirty -join "`n")"
+  }
   Write-Host "An update already ran (lock file changed since the last commit); merging only."
 } else {
   Push-Location $env:USERPROFILE
@@ -91,15 +105,16 @@ foreach ($name in $lock.skills.PSObject.Properties.Name) {
       $fm = "$o.mine"; $fb = "$o.base"; $ft = "$o.theirs"
       [IO.File]::WriteAllText($fm, $mText, $utf8); [IO.File]::WriteAllText($fb, $bText, $utf8); [IO.File]::WriteAllText($ft, $tText, $utf8)
       git merge-file -L mine -L base -L upstream $fm $fb $ft
+      if ($LASTEXITCODE -gt 127 -or $LASTEXITCODE -lt 0) { throw "git merge-file failed on $name/$rel" }
       if ($LASTEXITCODE -gt 0) { $conflicts += "skills/$name/$($rel.Replace('\', '/'))" }
-      elseif ($LASTEXITCODE -lt 0) { throw "git merge-file failed on $name/$rel" }
       Move-Item -Force $fm $o; Remove-Item $fb, $ft
     } elseif ($hasM) {
       # Upstream deleted it: drop it if I never changed it, else keep my copy.
-      if (-not $hasB -or (Read-Normalized $m) -ne (Read-Normalized $b)) { Copy-Item -LiteralPath $m $o }
+      $same = $hasB -and $(if ($null -eq (Read-Normalized $m)) { (Get-FileHash $m).Hash -eq (Get-FileHash $b).Hash } else { (Read-Normalized $m) -eq (Read-Normalized $b) })
+      if (-not $same) { Copy-Item -LiteralPath $m $o }
     } elseif ($hasT -and -not $hasB) {
       Copy-Item -LiteralPath $t $o  # new upstream file
-    }  # else: I deleted it, so it stays deleted
+    }  # else: I deleted it, so it stays deleted (even if upstream changed it)
   }
   New-Item -ItemType Directory -Force $out | Out-Null
   Remove-Item -Recurse -Force $theirs

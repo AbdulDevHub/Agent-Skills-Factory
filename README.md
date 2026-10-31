@@ -35,8 +35,8 @@ Everything else (design systems, code review, diagramming, backend SDKs, etc.) i
 
 ## How skills stay safe
 
-- **Edits are never lost.** A sync hook (`~/.claude/hooks/sync-skills.ps1`) records a fingerprint of each external skill when it's installed (`.skill-baseline.json`). If the content later changes without an upstream update, that skill counts as modified: it's taken out of `.gitignore` and committed.
-- **Updating:** run `scripts/update-skills.ps1` instead of a bare `npx skills update`. It runs the update, then three-way merges upstream's changes into each modified skill (old upstream, your version, new upstream) and commits. If both sides changed the same lines, it leaves `<<<<<<< mine` / `>>>>>>> upstream` markers for you to resolve. If you run `npx skills update` directly by mistake, the hook holds back the overwritten skill and the script can still merge it.
+- **Edits get saved automatically.** A sync hook (`~/.claude/hooks/sync-skills.ps1`) records a fingerprint of each external skill when it's installed (`.skill-baseline.json`). If the content later changes without an upstream update, that skill counts as modified: it's taken out of `.gitignore` and committed. The hook runs at the start and end of every Claude Code session, and the update script runs it first too. The one gap: editing an external skill and then running a bare `npx skills update` before the hook has run.
+- **Updating:** run `scripts/update-skills.ps1` instead of a bare `npx skills update`. It runs the update, then three-way merges upstream's changes into each modified skill (old upstream, your version, new upstream) and commits if everything merged cleanly. If both sides changed the same lines, it leaves `<<<<<<< mine` / `>>>>>>> upstream` markers for you to resolve. If you run `npx skills update` directly by mistake, the hook holds back the overwritten skill and the script can still merge it.
 - **Old snapshots:** the former `archive/` folder (an August 2026 copy of every skill) was removed. It's still in git history: `git checkout 84d2200 -- archive`.
 
 ```powershell
