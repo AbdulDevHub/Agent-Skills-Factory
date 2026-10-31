@@ -1,0 +1,86 @@
+{
+    "agent-browser":  {
+                          "fingerprint":  "7c252e0c3617c2d9bacf3233e2d730a17aabed0a",
+                          "lockHash":  "037e8078db4b20b4aa25c04f21c6de7d335ec449"
+                      },
+    "architect":  {
+                      "fingerprint":  "e59f0800d8f2baf5bf2fa5d7d6e6c1011435a353",
+                      "lockHash":  "130d344ca6db1938f6a28c03fa3b3a4e45573042"
+                  },
+    "brainstorming":  {
+                          "fingerprint":  "ee1c4da4fca3fbd7c5e162be47358619a19f9edb",
+                          "lockHash":  "881fc4ac82a25e61a58d332426b5673efe060da0"
+                      },
+    "code-reviewer":  {
+                          "fingerprint":  "60c3600cb64f42580b2794ce82608a06847027a2",
+                          "lockHash":  "b6c13d36248ab1a1942d8ca690233eabf414b7b2"
+                      },
+    "diagram-maker":  {
+                          "fingerprint":  "9cdd3ec19b3cd6aca2d7e959f5ce46043bc3b389",
+                          "lockHash":  "2e6f6de8eb973004ab86c5d480a60463c6bfe6f6"
+                      },
+    "drawio-skill":  {
+                         "fingerprint":  "056c26e208946c61d5206b1695e8f4467a6d27e4",
+                         "lockHash":  "fa2175136f4d25ee698689e5721fcf5f5ac4c91e"
+                     },
+    "find-skills":  {
+                        "fingerprint":  "b35155faca7a1a2f3c906577baf795b4a0e8d0e1",
+                        "lockHash":  "76a98a285cb0434f3d39e1a873823556330e398b"
+                    },
+    "frontend-design":  {
+                            "fingerprint":  "84e006787ca1061a18f492142d76b7ac971c9869",
+                            "lockHash":  "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296"
+                        },
+    "image-generation":  {
+                             "fingerprint":  "a36c9c5ddea9918b2028fa14f96f5923fea4d38c",
+                             "lockHash":  "0e3ac4246e2124a46d91b43c99d9749f9df079eb"
+                         },
+    "impeccable":  {
+                       "fingerprint":  "e29ee070f85a7d7ed4ac197bbab6fec8efda3080",
+                       "lockHash":  "91c1b07a98067914f5342e400e8ebd0afe0da26d"
+                   },
+    "imprint":  {
+                    "fingerprint":  "3b1de76bd39afe86139a1ecf76478e6196c9aac5",
+                    "lockHash":  "7ae49f698d537fae7c25326576eefae1614ca8c1"
+                },
+    "insforge":  {
+                     "fingerprint":  "7fe2d5143ea076377937b855153cd7b565443172",
+                     "lockHash":  "96160d6b797152f5331e0e4a3ee47d27d928ed7a"
+                 },
+    "insforge-cli":  {
+                         "fingerprint":  "db545df05f917f1afcba88938dbe15a821faded0",
+                         "lockHash":  "5e08266afaf4c74341dc74c9e3d7dcacb5ea400f"
+                     },
+    "insforge-debug":  {
+                           "fingerprint":  "d0c04b76501f51140c276af084173db3a9cd9d80",
+                           "lockHash":  "a2d67f1ce4182e58f0c2d7275ff9e49e0e210f43"
+                       },
+    "insforge-integrations":  {
+                                  "fingerprint":  "8bdfd9b6b8ba57db610a490de5113bc05b928216",
+                                  "lockHash":  "987011ac7ba31913698d784fd407b951f0455f8c"
+                              },
+    "recover":  {
+                    "fingerprint":  "ccf7ced788cd2c13cca6ed57de4bba02c2ee51d2",
+                    "lockHash":  "0b3373ddee0324350e0fc62eaf1d19c24f785266"
+                },
+    "remember":  {
+                     "fingerprint":  "e97ae814c93a7c95f404a71d58411ebe2df1f61d",
+                     "lockHash":  "6c23b6dac774bad83c6dd306a3484451703d984b"
+                 },
+    "review":  {
+                   "fingerprint":  "8f800c38d1cf042f0113fdcd61a988b4145e5667",
+                   "lockHash":  "de0b94d9684eafa09cab041b059ce24727bfedee"
+               },
+    "ui-ux-pro-max":  {
+                          "fingerprint":  "c71e401077f2798bd4f8da57521cb91eaa061812",
+                          "lockHash":  "75e1acaafe8b08e59d4b86fc253ac7873aff6bba"
+                      },
+    "vercel-react-best-practices":  {
+                                        "fingerprint":  "bce93ac34a8c4c2b963ddf95ef4221a5b0b26698",
+                                        "lockHash":  "343db72180d05814949fef7d46be96b5c6ee86b3"
+                                    },
+    "web-design-guidelines":  {
+                                  "fingerprint":  "9e96ad73a4d08e00f7bc6db93efc4a31341fa088",
+                                  "lockHash":  "3116f3e62dbd02b44a598b1aa690d2a8938e8f89"
+                              }
+}
