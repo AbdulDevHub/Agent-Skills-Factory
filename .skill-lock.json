@@ -193,15 +193,6 @@
       "installedAt": "2026-06-24T19:26:34.174Z",
       "updatedAt": "2026-06-24T19:26:34.174Z"
     },
-    "git-commit": {
-      "source": "github/awesome-copilot",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/github/awesome-copilot.git",
-      "skillPath": "skills/git-commit/SKILL.md",
-      "skillFolderHash": "883a6a7466f55a9cd9f22cf1cce2d9333fc9b998",
-      "installedAt": "2026-06-24T19:27:40.647Z",
-      "updatedAt": "2026-06-24T19:27:40.647Z"
-    },
     "diagram-maker": {
       "source": "openclaw/openclaw",
       "sourceType": "github",

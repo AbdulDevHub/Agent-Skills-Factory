@@ -28,7 +28,6 @@ Skills marked "modified" carry my own edits, so they live in git too. Update eve
 | `drawio-skill` | [Agents365-ai/drawio-skill](https://github.com/Agents365-ai/drawio-skill) | Generates and edits draw.io diagrams — shape libraries, autolayout, style presets, import parsers for multiple languages. | `npx skills add Agents365-ai/drawio-skill --skill drawio-skill` |
 | `image-generation` | [bytedance/deer-flow](https://github.com/bytedance/deer-flow) | Image generation skill (script + templates) for producing images as part of an agent workflow. | `npx skills add bytedance/deer-flow --skill image-generation` |
 | `code-reviewer` | [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | Code review skill with rule files for correctness, security (SQLi, XSS), performance (N+1), and maintainability. | `npx skills add Shubhamsaboo/awesome-llm-apps --skill code-reviewer` |
-| `git-commit` (modified, tracked in git) | [github/awesome-copilot](https://github.com/github/awesome-copilot) | Generates well-formed git commit messages from staged changes. | `npx skills add github/awesome-copilot --skill git-commit` |
 | `diagram-maker` | [openclaw/openclaw](https://github.com/openclaw/openclaw) | Creates diagrams (SVG / Excalidraw-style) from a description. | `npx skills add openclaw/openclaw --skill diagram-maker` |
 
 ## Install everything at once

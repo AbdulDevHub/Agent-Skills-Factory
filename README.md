@@ -25,7 +25,6 @@ These come from other people's repos, but I've edited them, so they're kept in g
 
 | Skill | Source | License | What I changed |
 | --- | --- | --- | --- |
-| `git-commit` | [github/awesome-copilot](https://github.com/github/awesome-copilot) | MIT | Adds gitmoji to the conventional-commit format. |
 | `grill-me` | [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | Self-contained interview instructions and a description that triggers on "grill me", "stress-test this", etc. |
 | `skill-creator` | [anthropics/skills](https://github.com/anthropics/skills) | Apache 2.0 (`LICENSE.txt`) | Test cases as per-case folders under `evals/`, matching the `claude plugin eval` layout. |
 
