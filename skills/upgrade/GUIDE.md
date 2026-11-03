@@ -19,7 +19,7 @@ What counts as an upgrade and where each one goes. Read by the `/upgrade` skill 
 | A skill/plugin/connector that misfired or was never needed | | skill-tweak |
 | A change to how a mod behaves or looks | "the pane should remember the tab" | mod |
 
-Skip anything that only mattered to that chat, anything derivable from code or git history, and anything already set up. Prefer **few, high-value items**: 0–6 per chat is normal, and none is a fine answer. A one-word reply like "no" or "use typescript" with no clear lasting rule behind it is not an upgrade.
+Skip anything that only mattered to that chat, anything derivable from code or git history, and anything already set up. Suggest **every lasting lesson** the chat shows, up to 5 per chat; none is fine when nothing will recur. A one-word reply like "no" or "use typescript" with no clear lasting rule behind it is not an upgrade.
 
 ## 2. Before suggesting, check what exists
 
