@@ -40,7 +40,6 @@ On Claude Code older than 2.1.275, add the marketplace first:
 
 | Skill | What it does |
 | --- | --- |
-| [`context-bootstrap`](./skills/context-bootstrap/SKILL.md) | Interviews you in six stages and writes a new project's AI-context docs: `AGENTS.md`, architecture, build plan, code standards, library docs, progress tracker, UI rules and tokens. |
 | [`setup-agent-context`](./skills/setup-agent-context/SKILL.md) | Scaffolds or refreshes `AGENTS.md` plus a `context/` folder for new or existing codebases. |
 | [`gitmoji-commit`](./skills/gitmoji-commit/SKILL.md) | Commits staged files with a gitmoji + conventional-commit message (`🐛 fix: ...`), splitting unrelated changes into separate commits. Never pushes. |
 | [`ship`](./skills/ship/SKILL.md) | End-of-day polish and publish for a repo: secret scan, verify, SEO check, README and screenshot refresh, GitHub metadata, agent context update, gitmoji commit and push. |
@@ -49,7 +48,6 @@ On Claude Code older than 2.1.275, add the marketplace first:
 | [`web-seo-optimization`](./skills/web-seo-optimization/SKILL.md) | SEO and social-sharing setup for React, Vite, Next.js and static sites: meta tags, Open Graph, JSON-LD, PWA manifest, sitemap, robots.txt. |
 | [`omni-ui`](./skills/omni-ui/SKILL.md) | Designs, builds, polishes, critiques and audits web UI: token plan first, an AI-slop ban list, accessibility checklist, motion and consistency guides. Merged from five skills (Anthropic and impeccable under Apache 2.0, ui-ux-pro-max and imprint under MIT; credited in `SOURCES.md`), with steps to pull upstream updates. |
 | [`markdownlint-fix`](./skills/markdownlint-fix/SKILL.md) | Fixes or suppresses markdownlint warnings across a project and configures rule exceptions. |
-| [`context7-mcp`](./skills/context7-mcp/SKILL.md) | Tells the agent when to pull current library docs from the Context7 MCP server instead of relying on stale training data. |
 | [`footer-note-comments`](./skills/footer-note-comments/SKILL.md) | Writes LeetCode/interview-style solutions with a numbered "footer notes" block instead of inline comments. |
 | [`free-helpers`](./skills/free-helpers/SKILL.md) | Offloads bulky or parallel jobs to free models (Gemini, OpenRouter, Groq, Cerebras via a local hub, Copilot CLI) when Claude usage is tight. |
 | [`js-style-refactor`](./skills/js-style-refactor/SKILL.md) | Refactors JavaScript into my personal style. Useful as a template for encoding your own style as a skill. |
