@@ -43,6 +43,7 @@ On Claude Code older than 2.1.275, add the marketplace first:
 | [`context-bootstrap`](./skills/context-bootstrap/SKILL.md) | Interviews you in six stages and writes a new project's AI-context docs: `AGENTS.md`, architecture, build plan, code standards, library docs, progress tracker, UI rules and tokens. |
 | [`setup-agent-context`](./skills/setup-agent-context/SKILL.md) | Scaffolds or refreshes `AGENTS.md` plus a `context/` folder for new or existing codebases. |
 | [`gitmoji-commit`](./skills/gitmoji-commit/SKILL.md) | Commits staged files with a gitmoji + conventional-commit message (`🐛 fix: ...`), splitting unrelated changes into separate commits. Never pushes. |
+| [`ship`](./skills/ship/SKILL.md) | End-of-day polish and publish for a repo: secret scan, verify, SEO check, README and screenshot refresh, GitHub metadata, agent context update, gitmoji commit and push. |
 | [`git-reformat-history-agent`](./skills/git-reformat-history-agent/SKILL.md) | Rewrites a whole repo's commit history into conventional-commits + gitmoji style. |
 | [`humanizer`](./skills/humanizer/SKILL.md) | Removes AI writing patterns from prose while keeping the writer's voice, or flags them without rewriting. Merged from three MIT projects (credited in the skill). |
 | [`web-seo-optimization`](./skills/web-seo-optimization/SKILL.md) | SEO and social-sharing setup for React, Vite, Next.js and static sites: meta tags, Open Graph, JSON-LD, PWA manifest, sitemap, robots.txt. |
