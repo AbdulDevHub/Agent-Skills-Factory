@@ -1,15 +1,6 @@
 {
   "version": 3,
   "skills": {
-    "impeccable": {
-      "source": "pbakaus/impeccable",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/pbakaus/impeccable.git",
-      "skillPath": ".agents/skills/impeccable/SKILL.md",
-      "skillFolderHash": "91c1b07a98067914f5342e400e8ebd0afe0da26d",
-      "installedAt": "2026-06-18T00:01:06.640Z",
-      "updatedAt": "2026-06-18T00:01:06.640Z"
-    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
@@ -18,16 +9,6 @@
       "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
       "installedAt": "2026-06-18T00:01:13.773Z",
       "updatedAt": "2026-08-15T01:12:26.374Z"
-    },
-    "ui-ux-pro-max": {
-      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
-      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
-      "skillFolderHash": "75e1acaafe8b08e59d4b86fc253ac7873aff6bba",
-      "pluginName": "ui-ux-pro-max",
-      "installedAt": "2026-06-18T00:03:12.182Z",
-      "updatedAt": "2026-06-18T00:04:24.460Z"
     },
     "agent-browser": {
       "source": "vercel-labs/agent-browser",
@@ -38,15 +19,6 @@
       "installedAt": "2026-06-18T00:04:03.116Z",
       "updatedAt": "2026-08-15T01:12:19.767Z"
     },
-    "web-design-guidelines": {
-      "source": "vercel-labs/agent-skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
-      "skillPath": "skills/web-design-guidelines/SKILL.md",
-      "skillFolderHash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89",
-      "installedAt": "2026-06-18T00:05:16.697Z",
-      "updatedAt": "2026-06-18T00:05:16.697Z"
-    },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
@@ -56,16 +28,6 @@
       "installedAt": "2026-06-18T00:05:39.788Z",
       "updatedAt": "2026-06-18T00:05:39.788Z"
     },
-    "frontend-design": {
-      "source": "anthropics/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/anthropics/skills.git",
-      "skillPath": "skills/frontend-design/SKILL.md",
-      "skillFolderHash": "0d5b74a14bdf3ebcd64f352d06376a2ef05ed296",
-      "pluginName": "example-skills",
-      "installedAt": "2026-06-18T00:06:01.301Z",
-      "updatedAt": "2026-06-18T00:06:01.301Z"
-    },
     "architect": {
       "source": "JavaScript-Mastery-Pro/skills",
       "sourceType": "github",
@@ -74,15 +36,6 @@
       "skillFolderHash": "130d344ca6db1938f6a28c03fa3b3a4e45573042",
       "installedAt": "2026-06-18T00:06:40.253Z",
       "updatedAt": "2026-06-18T00:06:40.253Z"
-    },
-    "imprint": {
-      "source": "JavaScript-Mastery-Pro/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/JavaScript-Mastery-Pro/skills.git",
-      "skillPath": "skills/imprint/SKILL.md",
-      "skillFolderHash": "7ae49f698d537fae7c25326576eefae1614ca8c1",
-      "installedAt": "2026-06-18T00:06:40.318Z",
-      "updatedAt": "2026-06-18T00:06:40.318Z"
     },
     "recover": {
       "source": "JavaScript-Mastery-Pro/skills",

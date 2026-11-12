@@ -1,6 +1,6 @@
 # Sources
 
-`ui-ux` merges five earlier skills into one (Fable audit S5, 2026-11). Nothing here is loaded for design work; it records where each rule came from, the licence terms, and how to pull in upstream changes.
+`omniui` (OmniUI, first named `ui-ux`) merges five earlier skills into one (Fable audit S5, 2026-11). Nothing here is loaded for design work; it records where each rule came from, the licence terms, and how to pull in upstream changes.
 
 Merged 2026-11-12 from the upstream versions listed below (fetched that day), not only from the copies installed in June 2026.
 
@@ -47,7 +47,7 @@ Settled choices that differ from the newest upstream (keep unless the user decid
 
 ## Checking for updates
 
-Run this when the user asks to update `ui-ux`, or about every three months. Work in a scratch folder, never in the skills repo.
+Run this when the user asks to update OmniUI, or about every three months. Work in a scratch folder, never in the skills repo.
 
 1. **See what changed.** For each row in the table, list commits to that path since the recorded one:
    ```

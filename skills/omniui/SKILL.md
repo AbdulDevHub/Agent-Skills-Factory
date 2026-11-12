@@ -1,9 +1,9 @@
 ---
-name: ui-ux
+name: omniui
 description: "Design, build, restyle, critique or audit any web UI: pages, landing pages, dashboards, components, extension popups, mod panes. Use for 'make it look better', 'polish', 'redesign', 'review this UI', and for spacing, type, colour and animation choices. Not for charts alone (dataviz), SEO (web-seo-optimization), React performance (vercel-react-best-practices) or published Artifacts (artifact-design)."
 ---
 
-# UI/UX
+# OmniUI
 
 One skill for making web UI that looks intentional, reads clearly and works for everyone. Text only: no scripts, no generators, no registry files.
 
