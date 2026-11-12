@@ -2,6 +2,15 @@
 
 Load for Critique or Audit mode. Report findings; change code only if the user asks. Read the source files and have `ui-checker` look at the live page before judging; a critique from code alone misses what the screen shows.
 
+## Contents
+- Name a quality bar first
+- Two passes (design review, technical audit)
+- Heuristic scores (critique) and audit scores (audit)
+- Cognitive load checklist
+- Personas
+- Severity
+- Output format
+
 ## Name a quality bar first
 
 Before looking closely, name the bar the work is measured against: a specific product, site or page the user respects, or one they name (ask once if it is not obvious; otherwise pick two plausible ones and say so). Then compare the work against the bar as if you did not know which one you made: same viewport, same task, side by side. List where the bar is better and why. "Good" means "at least as good as the bar at the page's single job", not "has no obvious bugs".

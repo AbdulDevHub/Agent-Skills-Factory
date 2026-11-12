@@ -2,6 +2,15 @@
 
 Load for Animate mode, or when a build adds transitions. SKILL.md section 4 (Motion) is the rule; this file is how.
 
+## Contents
+- Decide first (purpose, register, motion plan)
+- Timing and easing
+- Properties
+- Patterns
+- Interaction rules
+- Reduced motion
+- Libraries and check
+
 ## Decide first
 
 Motion is a budget. Spend it where it explains something:
@@ -44,7 +53,7 @@ No bounce, no elastic overshoot, no `linear` for UI movement (linear is fine for
 
 ## Properties
 
-Animate `transform` (translate, scale, rotate) and `opacity` only. They run on the compositor and do not cause layout.
+Movement and reveals animate `transform` (translate, scale, rotate) and `opacity` only. They run on the compositor and do not cause layout. State colour fades (background, border, text colour on hover or focus) are fine; they are not movement.
 - Moving or resizing: translate and scale, not top, left, width or height.
 - Expanding to an unknown height (accordions): do not animate `height`. Use a FLIP technique (measure the start and end, then animate a transform) or let the panel open instantly and fade its content in.
 - Press feedback: `scale(0.97)` on active, back to 1 on release.
@@ -53,7 +62,7 @@ Animate `transform` (translate, scale, rotate) and `opacity` only. They run on t
 
 ## Patterns
 
-- **Hover**: colour or shadow shift, or `translateY(-1px)`, 150 ms. Never the only way to reveal something.
+- **Hover**: a colour fade, or `translateY(-1px)`, 150 ms. Never the only way to reveal something.
 - **Menus and popovers**: fade plus a small scale (0.96 → 1) from the trigger's side.
 - **Dialogs and drawers**: backdrop fades; panel scales in from its trigger or slides from its edge. Move focus inside; return it on close.
 - **Tabs**: slide the indicator with transform; crossfade the content.

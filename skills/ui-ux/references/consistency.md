@@ -30,11 +30,11 @@ For each value, note the files that use it and how often. A plain search is enou
 
 If `context/UI_TOKENS.md` exists, compare every collected value with it. If it does not, the baseline is the value most components already use, checked against SKILL.md section 4 (a majority value that fails contrast is still wrong).
 
-List the drift:
+List the drift (format only; fill in the real values and counts):
 
 ```
-Radius     rounded-lg (14 uses)  vs  rounded-xl (3 uses in <files>)    → standardise on rounded-lg
-Text muted <value> (9 uses)  vs  <value> (2 uses, fails 4.5:1)        → use the muted-ink token
+<property>  <value A> (<n> uses)  vs  <value B> (<n> uses in <files>)  → standardise on <value>
+Text muted <value> (<n> uses)  vs  <value> (<n> uses, fails 4.5:1)     → use the muted-ink token
 Hard-coded <file>:<line>  <raw value>                                   → replace with <token>
 ```
 

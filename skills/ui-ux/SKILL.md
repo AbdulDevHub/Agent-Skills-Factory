@@ -85,8 +85,8 @@ Do this in your head or in a short plan block, then build. Skip only for a one-p
 
 ### Motion
 - Every animation must have a purpose: feedback, a state change, spatial continuity, or drawing the eye to one thing. A reveal must add meaning; content is visible by default and never waits on a class to appear.
-- 150 to 300 ms for UI transitions; exits about 75% of the entrance. Ease-out (for example `cubic-bezier(0.25, 1, 0.5, 1)`); no bounce, no elastic, no linear for UI.
-- Animate `transform` and `opacity` only. Never width, height, top, left or margins.
+- 150 to 300 ms for UI transitions (instant press feedback may be 100 to 150 ms; one brand-page entrance may run up to 500 ms); exits about 75% of the entrance. Ease-out (for example `cubic-bezier(0.25, 1, 0.5, 1)`); no bounce, no elastic, no linear for UI movement.
+- Movement and reveals animate `transform` and `opacity` only. Never width, height, top, left or margins. State colour changes (background, border, text colour on hover or focus) may fade; they are not movement.
 - Respect `prefers-reduced-motion`: every animation gets an instant or crossfade alternative.
 - Never block input during an animation. Details: `references/motion.md`.
 
@@ -157,6 +157,8 @@ Never report UI work as done before the check comes back.
    - [ ] `prefers-reduced-motion` honoured.
    - [ ] Console clean: no errors or warnings from your change.
    - [ ] Section 5 bans: none present.
+
+   If `ui-checker` returns FIX or any box stays unticked, fix it and return to step 1. Done when the checker says PASS and every box is ticked.
 3. If the project README shows a screenshot of what changed, refresh that screenshot in the same task.
 
 ## 7. Persist

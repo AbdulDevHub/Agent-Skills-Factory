@@ -2,6 +2,15 @@
 
 Load for Build and Polish modes, after SKILL.md sections 2 and 3. Everything here refines the core rules; nothing here overrides them.
 
+## Contents
+- The hero is a thesis (brand register)
+- Brand versus product, in practice
+- Component patterns: buttons, cards and lists, tables, overlays, icons, chips, empty/loading/error
+- Forms
+- Navigation
+- Responsive behaviour
+- Polish pass
+
 ## The hero is a thesis (brand register)
 
 Open with the most characteristic thing in the subject's world, in whatever form fits: a headline, a photograph, a live demo, an interactive moment. Choose it on purpose. Before building, describe the page in one sentence the way a competitor would describe theirs; if that sentence fits the typical landing page in the category, start over.
