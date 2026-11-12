@@ -71,6 +71,10 @@
                    "fingerprint":  "8f800c38d1cf042f0113fdcd61a988b4145e5667",
                    "lockHash":  "de0b94d9684eafa09cab041b059ce24727bfedee"
                },
+    "skill-creator-plus":  {
+                               "fingerprint":  "675fce3420dc46827cee4d2502f9a008de1afede",
+                               "lockHash":  "13446e8bb45c2d656c393ecf0948c9b2379296ad"
+                           },
     "ui-ux-pro-max":  {
                           "fingerprint":  "c71e401077f2798bd4f8da57521cb91eaa061812",
                           "lockHash":  "75e1acaafe8b08e59d4b86fc253ac7873aff6bba"
