@@ -1,30 +1,30 @@
 {
-  "architect": {
-    "fingerprint": "e59f0800d8f2baf5bf2fa5d7d6e6c1011435a353",
-    "lockHash": "130d344ca6db1938f6a28c03fa3b3a4e45573042"
-  },
-  "diagram-maker": {
-    "fingerprint": "9cdd3ec19b3cd6aca2d7e959f5ce46043bc3b389",
-    "lockHash": "2e6f6de8eb973004ab86c5d480a60463c6bfe6f6"
-  },
-  "drawio-skill": {
-    "fingerprint": "056c26e208946c61d5206b1695e8f4467a6d27e4",
-    "lockHash": "fa2175136f4d25ee698689e5721fcf5f5ac4c91e"
-  },
-  "find-skills": {
-    "fingerprint": "b35155faca7a1a2f3c906577baf795b4a0e8d0e1",
-    "lockHash": "76a98a285cb0434f3d39e1a873823556330e398b"
-  },
-  "image-generation": {
-    "fingerprint": "a36c9c5ddea9918b2028fa14f96f5923fea4d38c",
-    "lockHash": "0e3ac4246e2124a46d91b43c99d9749f9df079eb"
-  },
-  "skill-creator-plus": {
-    "fingerprint": "675fce3420dc46827cee4d2502f9a008de1afede",
-    "lockHash": "13446e8bb45c2d656c393ecf0948c9b2379296ad"
-  },
-  "vercel-react-best-practices": {
-    "fingerprint": "bce93ac34a8c4c2b963ddf95ef4221a5b0b26698",
-    "lockHash": "343db72180d05814949fef7d46be96b5c6ee86b3"
-  }
+    "architect":  {
+                      "fingerprint":  "e59f0800d8f2baf5bf2fa5d7d6e6c1011435a353",
+                      "lockHash":  "130d344ca6db1938f6a28c03fa3b3a4e45573042"
+                  },
+    "diagram-maker":  {
+                          "fingerprint":  "9cdd3ec19b3cd6aca2d7e959f5ce46043bc3b389",
+                          "lockHash":  "2e6f6de8eb973004ab86c5d480a60463c6bfe6f6"
+                      },
+    "drawio-skill":  {
+                         "fingerprint":  "056c26e208946c61d5206b1695e8f4467a6d27e4",
+                         "lockHash":  "fa2175136f4d25ee698689e5721fcf5f5ac4c91e"
+                     },
+    "find-skills":  {
+                        "fingerprint":  "b35155faca7a1a2f3c906577baf795b4a0e8d0e1",
+                        "lockHash":  "76a98a285cb0434f3d39e1a873823556330e398b"
+                    },
+    "image-generation":  {
+                             "fingerprint":  "a36c9c5ddea9918b2028fa14f96f5923fea4d38c",
+                             "lockHash":  "0e3ac4246e2124a46d91b43c99d9749f9df079eb"
+                         },
+    "skill-creator-plus":  {
+                               "fingerprint":  "675fce3420dc46827cee4d2502f9a008de1afede",
+                               "lockHash":  "13446e8bb45c2d656c393ecf0948c9b2379296ad"
+                           },
+    "vercel-react-best-practices":  {
+                                        "fingerprint":  "bce93ac34a8c4c2b963ddf95ef4221a5b0b26698",
+                                        "lockHash":  "343db72180d05814949fef7d46be96b5c6ee86b3"
+                                    }
 }
