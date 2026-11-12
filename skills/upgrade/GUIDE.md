@@ -19,7 +19,7 @@ What counts as an upgrade and where each one goes. Read by the `/upgrade` skill 
 | A skill/plugin/connector that misfired or was never needed | | skill-tweak |
 | A change to how a mod behaves or looks | "the pane should remember the tab" | mod |
 
-Skip anything that only mattered to that chat, anything derivable from code or git history, and anything already set up. Suggest **every lasting lesson** the chat shows, up to 5 per chat; none is fine when nothing will recur. A one-word reply like "no" or "use typescript" with no clear lasting rule behind it is not an upgrade.
+Skip anything that only mattered to that chat, anything derivable from code or git history, and anything already set up, and anything a tool or hook already enforces (its own error is the reminder). Suggest **every lasting lesson** the chat shows, up to 3 per chat; none is fine when nothing will recur. A one-word reply like "no" or "use typescript" with no clear lasting rule behind it is not an upgrade.
 
 ## 2. Before suggesting, check what exists
 
@@ -28,14 +28,17 @@ Skip anything that only mattered to that chat, anything derivable from code or g
 - `~/.claude/settings.json` (`permissions`, `hooks`)
 - Skills: `~/.agents/skills/` (source of truth; `~/.claude/skills` holds links); agents: `~/.claude/agents/`
 - `~/.claude/WORKFLOW.md`
+- `~/.claude/notes/INDEX.md` (cross-project notes) and `~/.claude/plugins/<mod>/NOTES.md` (mod notes)
 
 If an existing entry covers the item, suggest updating it rather than adding a new one. If an existing entry is now wrong, suggest fixing or removing it.
 
 ## 3. Where each kind goes
 
-- **rule, every project** (who the user is, global tools, cross-project resources) → `~/.claude/CLAUDE.md`, one short line under the fitting section. Keep that file lean: pointers, not contents.
-- **rule, one project** → that project's `AGENTS.md` (or `context/PROGRESS_TRACKER.md` for state); its `CLAUDE.md` if it has no AGENTS.md.
-- **memory** (useful background, not a rule) → a memory file in the project memory dir with frontmatter (`name`, `description`, `metadata.type`: user | feedback | project | reference) plus a one-line pointer in `MEMORY.md`. Memory is per-project; anything needed across projects is a global rule instead.
+- **rule, every project** → `~/.claude/CLAUDE.md`, one short line, only when it changes behaviour in most sessions. A gotcha about one tool or site goes in `~/.claude/notes/claude-code-gotchas.md` (or the fitting note) instead.
+- **rule, one project** → that project's `AGENTS.md` (or `context/PROGRESS_TRACKER.md` for state), at the folder's current path.
+- **memory** → only private project facts that must not sit in a repo (accounts, ids, personal preferences for that project): a memory file with frontmatter plus a `MEMORY.md` pointer. Everything else about a project goes in its AGENTS.md or context files.
+- **mod knowledge** (design decisions, UI preferences, known traps of a mod) → `~/.claude/plugins/<mod>/NOTES.md`, never project memory.
+- **skills-repo conventions** → `~/.agents/AGENTS.md`.
 - **permission / hook** → `~/.claude/settings.json` (load the `update-config` skill first). Hook scripts live in `~/.claude/hooks/` with a line in `~/.claude/hooks/README.md`.
 - **skill** → load `anthropic-skills:skill-creator`, create it in `~/.claude/skills/<name>/` (the sync hook moves it into `~/.agents` and commits it).
 - **skill-tweak** → edit the skill in `~/.agents/skills/<name>/`, or turn it off from the Toolbox.

@@ -54,5 +54,6 @@ A pinned model that is busy falls back to `auto` (the reply's `answered by` line
   - research the model;
   - update `MODELS.md` and the aliases;
   - tell the user to check Antigravity's own list for a newer default.
+- **The hub runs itself:** the FreeLLMAPI hub at 127.0.0.1:31415 starts itself through `helper` and stays in the tray. Providers in use: AI Studio, Groq, NVIDIA, OpenRouter (Cerebras and Mistral skipped, they need payment). Do not ask the user to open the app or re-add providers. Read model names from `helper models`; they change.
 
 Setup and config commands for every tool are in `SETUP.md`. For Google-specific setup questions, also try `helper ask --model gemini`.
