@@ -1,6 +1,6 @@
 # Sources
 
-`omniui` (OmniUI, first named `ui-ux`) merges five earlier skills into one (Fable audit S5, 2026-11). Nothing here is loaded for design work; it records where each rule came from, the licence terms, and how to pull in upstream changes.
+`omni-ui` (OmniUI, first named `ui-ux`) merges five earlier skills into one (Fable audit S5, 2026-11). Nothing here is loaded for design work; it records where each rule came from, the licence terms, and how to pull in upstream changes.
 
 Merged 2026-11-12 from the upstream versions listed below (fetched that day), not only from the copies installed in June 2026.
 

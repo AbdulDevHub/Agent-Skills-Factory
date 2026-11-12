@@ -1,5 +1,5 @@
 ---
-name: omniui
+name: omni-ui
 description: "Design, build, restyle, critique or audit any web UI: pages, landing pages, dashboards, components, extension popups, mod panes. Use for 'make it look better', 'polish', 'redesign', 'review this UI', and for spacing, type, colour and animation choices. Not for charts alone (dataviz), SEO (web-seo-optimization), React performance (vercel-react-best-practices) or published Artifacts (artifact-design)."
 ---
 
