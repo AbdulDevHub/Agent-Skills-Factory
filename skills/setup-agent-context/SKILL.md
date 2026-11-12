@@ -36,7 +36,9 @@ Keep this file terse and machine-facing — aim for roughly 20-40 lines excludin
 1. **Purpose header** (3-5 lines) — what this file is, that it's read by AI coding agents, and the standing maintenance clause (see below).
 2. **Project overview** — one or two sentences, not a duplicate of the README's overview.
 3. **Tech stack** — languages, frameworks, key dependencies.
-4. **Setup & run commands** — exact, copy-pasteable (install, dev server, test, build, lint).
+4. **Setup & run commands** — exact, copy-pasteable (install, dev server, test, build, lint). Always include the two check lines, written as plain `Verify: <command>` lines:
+   - `Verify:` the fast check, under 60 s, no build and no browser (typecheck, lint or unit tests). The user's stop hook runs it after every turn that edited code. Time it once; if it takes over 30 s, move the slow part to `Verify-full:`. Use `Verify: none` when the project can only be checked remotely.
+   - `Verify-full:` optional; the build, e2e or anything slow. Claude runs it before a commit or push on substantial work. Add it only when such a check exists.
 5. **Conventions & constraints** — non-obvious rules an agent wouldn't infer from the code itself. Skip anything generic ("write clean code") — only project-specific rules.
 6. **Boundaries** — files/areas the agent should not touch or should be careful with, if any exist.
 7. **Where to look for more** — point explicitly to `README.md` (for the plain-language project overview) and `context/` (for progress tracking and any deeper docs), so an agent doesn't have to guess what else exists.
