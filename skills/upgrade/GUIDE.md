@@ -40,7 +40,7 @@ If an existing entry covers the item, suggest updating it rather than adding a n
 - **mod knowledge** (design decisions, UI preferences, known traps of a mod) → `~/.claude/plugins/<mod>/NOTES.md`, never project memory.
 - **skills-repo conventions** → `~/.agents/AGENTS.md`.
 - **permission / hook** → `~/.claude/settings.json` (load the `update-config` skill first). Hook scripts live in `~/.claude/hooks/` with a line in `~/.claude/hooks/README.md`.
-- **skill** → load `anthropic-skills:skill-creator`, create it in `~/.claude/skills/<name>/` (the sync hook moves it into `~/.agents` and commits it).
+- **skill** → load `skill-creator-plus` (NEW mode), create it in `~/.claude/skills/<name>/` (the sync hook moves it into `~/.agents` and commits it).
 - **skill-tweak** → edit the skill in `~/.agents/skills/<name>/`, or turn it off from the Toolbox.
 - **agent** → `~/.claude/agents/<name>.md` (model `sonnet` or `haiku` unless it truly needs more: Pro plan).
 - **mod** → follow the global-mod rule in `~/.claude/CLAUDE.md` (build in the dev-mods session folder, copy to `~/.claude/plugins/<mod>/`).

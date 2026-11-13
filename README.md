@@ -63,7 +63,6 @@ Modified external skills kept in git under their original licenses:
 | Skill | Source | License | What I changed |
 | --- | --- | --- | --- |
 | `grill-me` | [mattpocock/skills](https://github.com/mattpocock/skills) | MIT | Self-contained interview instructions and a description that triggers on "grill me", "stress-test this", etc. |
-| `skill-creator` | [anthropics/skills](https://github.com/anthropics/skills) | Apache 2.0 (`LICENSE.txt`) | Test cases as per-case folders under `evals/`, matching the `claude plugin eval` layout. |
 
 The unmodified ones (design systems, code review, diagramming, backend SDKs) are listed with sources in [External Skills.md](./External%20Skills.md).
 
