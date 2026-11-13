@@ -32,6 +32,8 @@ Before any design choice, pin three things and state them in one line each:
 
 If the brief leaves these open, choose them yourself and say what you chose. The subject's own world (its materials, objects, vocabulary) is where distinctive choices come from. Use the brief's real content throughout; never lorem ipsum.
 
+Ask once, up front, for real photos, numbers, prices and names; never invent them. For a named real brand, take its colours, logo and type from its own site or brand guidelines, not from memory (from huashu-design).
+
 Pick the **register**:
 - **Brand** (landing, marketing, portfolio, campaign, about page): the design is the product. Needs a point of view, real imagery when the subject implies it, one memorable signature element.
 - **Product** (app, dashboard, tool, settings, extension popup, mod pane): the design serves a task. Earned familiarity beats novelty; one well-tuned sans family is often right; density is allowed; motion conveys state only.
@@ -56,7 +58,7 @@ Do this in your head or in a short plan block, then build. Skip only for a one-p
    - Spacing scale on a 4 px base, radius scale, shadow scale, motion durations and one easing curve.
 2. **ASCII wireframe** of the main view at desktop and at phone width. Mark the primary action and the signature element.
 3. **Self-critique**: check the plan against section 5. If any part reads like the default you would produce for any similar page, revise it and say what changed and why.
-4. **Build**, deriving every colour, size and spacing value from the token plan. Define tokens as CSS custom properties (or the project's existing system); no raw hex or one-off pixel values in components. Watch selector specificity so section and component rules do not cancel each other.
+4. **Build**; on a brand page, build the hero first and look at it before building the rest, since it sets the look for everything after (from Hallmark). Derive every colour, size and spacing value from the token plan. Define tokens as CSS custom properties (or the project's existing system); no raw hex or one-off pixel values in components. Watch selector specificity so section and component rules do not cancel each other.
 
 ## 4. Core rules
 
@@ -189,5 +191,8 @@ Update existing entries rather than appending duplicates. If `context/` does not
 - UI kits, animated components and animation libraries: `~/.claude/reference/libraries.md` (Fancy / animated components, Animation).
 - Ready-made scroll, hover and ambient effects: cinematic-site-components (listed in `libraries.md`); use one effect as the signature, not five.
 - Charts and data visualisation: the `dataviz` skill.
+- Reference sites (free): oklch.com (OKLCH picker with gamut check), Radix Colors (12-step accessible scales with dark pairs), Realtime Colors (preview a palette and font pair on a live mock), Typewolf (fonts real sites use, Google Fonts pairings), Fontshare (free display fonts). Visual galleries are in `~/.claude/reference/tools.md`.
+- Matching a reference site: `npx designlang <url>` extracts its tokens (colours, type, spacing, motion) as a starting point; `npx designlang slop <url>` scores how generic a page looks. Untested here; needs Node 20+ and a one-time Chromium download.
+- Longer AI-tell catalogue (67 tells with fixes and severities) to consult during a critique: https://github.com/funboy322/avoid-ai-design `references/ai-tells-catalog.md`.
 - Optional extra audit: Vercel's Web Interface Guidelines, https://github.com/vercel-labs/web-interface-guidelines (fetch and apply when the user asks for a second rule set).
 - Maintaining this skill (where each rule came from, how to pull upstream updates): `SOURCES.md`. Not needed for design work.
