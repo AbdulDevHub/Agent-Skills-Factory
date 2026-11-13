@@ -38,15 +38,6 @@
       "installedAt": "2026-06-18T16:13:26.781Z",
       "updatedAt": "2026-06-18T16:13:26.781Z"
     },
-    "drawio-skill": {
-      "source": "Agents365-ai/drawio-skill",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/Agents365-ai/drawio-skill.git",
-      "skillPath": "skills/drawio-skill/SKILL.md",
-      "skillFolderHash": "fa2175136f4d25ee698689e5721fcf5f5ac4c91e",
-      "installedAt": "2026-06-24T19:23:52.684Z",
-      "updatedAt": "2026-06-24T19:23:52.684Z"
-    },
     "image-generation": {
       "source": "bytedance/deer-flow",
       "sourceType": "github",

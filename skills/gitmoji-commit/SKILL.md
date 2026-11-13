@@ -1,11 +1,13 @@
 ---
 name: gitmoji-commit
-description: 'Commit the currently staged files with a gitmoji + conventional-commit message like "🐛 fix: Fix scrollbar behaviour". Reads the staged diff, picks the emoji and type, adds a scope only in monorepos, splits unrelated changes into several commits when it helps, and runs git commit without pushing. Use when the user says "/gitmoji-commit", "commit my staged files", "write a commit message", or "gitmoji commit".'
+description: 'Commit the currently staged files with a gitmoji + conventional-commit message like "🐛 fix: Fix scrollbar behaviour". Reads the staged diff, picks the emoji and type, adds a scope only in monorepos, splits unrelated changes into several commits when it helps, and runs git commit without pushing. Can also rewrite a whole repo''s old commit messages into this style. Use when the user says "/gitmoji-commit", "commit my staged files", "write a commit message", "gitmoji commit", "reformat commit history", "fix all commit messages" or "/reformat-commits".'
 ---
 
 # Gitmoji commit
 
 Look at what is staged (staging everything first if nothing is), write a gitmoji commit message, and run `git commit`. **Never push.** The user reviews and pushes themselves.
+
+To reformat a repo's existing history instead of making a new commit, follow `references/history-rewrite.md`.
 
 ## Message format
 

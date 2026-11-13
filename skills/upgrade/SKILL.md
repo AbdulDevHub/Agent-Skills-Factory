@@ -29,7 +29,7 @@ node ~/.claude/skills/upgrade/inbox.mjs add '[{"kind":"rule","title":"…","deta
    | id | What | Where | Exact text / change |
    |---|---|---|---|
 
-4. **Apply** only what the user approved. Follow GUIDE.md §3 for where each kind goes and which skill to load first (`update-config` for settings and hooks, `skill-creator` for new skills, the global-mod rule for mods). Match the surrounding style of each file.
+4. **Apply** only what the user approved. Follow GUIDE.md §3 for where each kind goes and which skill to load first (`update-config` for settings and hooks, `skill-creator-plus` for new or changed skills, the global-mod rule for mods). Match the surrounding style of each file.
 5. **Record** each result with `inbox.mjs`:
    - applied: one-line note naming the file(s) written,
    - dropped: the reason,
@@ -40,8 +40,8 @@ node ~/.claude/skills/upgrade/inbox.mjs add '[{"kind":"rule","title":"…","deta
 
 This mode replaces /retro.
 
-1. Scan the conversation from the first message using GUIDE.md §1. Check what already exists (§2) and what is already in the inbox (`show` with no ids lists the open items), so nothing is suggested twice.
-2. Show the candidates in the same table (id column left blank), most valuable first. Ask with AskUserQuestion (multiSelect) whether to:
+1. Scan the conversation from the first message using GUIDE.md §1: look for corrections the user made, preferences they stated, and gaps where a skill, rule or note was missing or wrong. Check what already exists (§2) and what is already in the inbox (`show` with no ids lists the open items), so nothing is suggested twice.
+2. Keep **at most 7** candidates (drop the weakest; fewer is fine), and give each one a concrete target: the exact skill, `CLAUDE.md`/`AGENTS.md`, memory file, note or hook it would change (idea from RoboNuggets' calibrate skill). Show them in the same table (id column left blank), most valuable first. Ask with AskUserQuestion (multiSelect) whether to:
    - apply them now (then follow steps 3–6 above after adding them), or
    - add them to the inbox for later.
 3. Add the chosen items with `add`, giving the current project folder. Report the new ids.

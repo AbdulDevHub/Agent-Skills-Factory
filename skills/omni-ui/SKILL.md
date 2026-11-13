@@ -47,6 +47,12 @@ Read what already exists, and reuse it:
 
 Never create `PRODUCT.md`, `ui-registry.md` or `design-system/MASTER.md`. Project design memory lives only in `context/UI_TOKENS.md` and `context/UI_RULES.md` (section 7).
 
+**Aim higher** (from be-ambitious): before planning, ask what would make this clearly better, not just bigger.
+- **Altitude**: aim at the goal behind the request. "Make a pricing page" is really "help a visitor pick a plan with confidence", which may mean a comparison or a recommender rather than three cards.
+- **Depth**: work like the best designer for this subject would, from real material (the product, its data, its users' words), and let an outside check judge the result (`ui-checker`, the brief, a reference site), never your own opinion of it.
+- **Range**: borrow methods, not vocabulary, from neighbouring fields: editorial layout for long reads, wayfinding signage for navigation, product photography for hero shots, game UI for feedback and state.
+Propose the bigger version in one line when it would change what the user asked for; build it only if they agree.
+
 ## 3. Plan before code
 
 Do this in your head or in a short plan block, then build. Skip only for a one-property fix.

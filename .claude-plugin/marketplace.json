@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "agent-skills-factory",
-      "description": "Developer-workflow skills: AGENTS.md/context scaffolding, gitmoji + conventional commits, git history rewriting, humanizer, web SEO, markdownlint fixes, Context7 docs lookup, interview-style code notes and free-model offloading.",
+      "description": "Developer-workflow skills: AGENTS.md/context scaffolding, gitmoji + conventional commits (including git history rewriting), humanizer, web SEO, markdownlint fixes, Context7 docs lookup and free-model offloading.",
       "source": "./",
       "strict": false,
       "keywords": ["agent-skills", "skill-md", "claude-code", "agents-md", "gitmoji", "seo", "humanizer"],
@@ -19,12 +19,10 @@
         "./skills/context-bootstrap",
         "./skills/setup-agent-context",
         "./skills/gitmoji-commit",
-        "./skills/git-reformat-history-agent",
         "./skills/humanizer",
         "./skills/web-seo-optimization",
         "./skills/markdownlint-fix",
         "./skills/context7-mcp",
-        "./skills/footer-note-comments",
         "./skills/free-helpers"
       ]
     }
