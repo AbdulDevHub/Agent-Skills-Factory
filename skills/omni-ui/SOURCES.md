@@ -14,6 +14,7 @@ Merged 2026-11-12 from the upstream versions listed below (fetched that day), no
 | ui-ux-pro-max | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) `.claude/skills/ui-ux-pro-max/` | Next Level Builder | MIT (repo `LICENSE`) | path commit `4f2dbb67e649` (2026-11-07); rules from `references/quick-reference.md` | Sections 1, 2 (a11y-checklist), 7 (motion), 8, 9 (build: forms, navigation), pre-delivery checklist (SKILL.md section 6) |
 | web-design-guidelines | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) `skills/web-design-guidelines/`; rules in [vercel-labs/web-interface-guidelines](https://github.com/vercel-labs/web-interface-guidelines) `command.md` | Vercel | Skill repo: **no licence file**. Rules repo: MIT | skill `ba46938889d4`, rules `4ecfb9fb8d1d` | Only the idea of terse `file:line` findings and a pointer to the guidelines URL. No text copied. |
 | imprint | [JavaScript-Mastery-Pro/skills](https://github.com/JavaScript-Mastery-Pro/skills) `skills/imprint/` | JavaScript Mastery | MIT (repo `LICENSE`) | copy installed 2026-06-18 (skills-lock folder hash `7ae49f6`, not checkable upstream); **no longer in the repo** (checked 2026-11-12) | consistency.md: extract used values, compare, list drift, confirm, fix. Its `ui-registry.md` file is not used. |
+| taste-skill | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) `skills/taste-skill/` | Leonxlnx | MIT (repo `LICENSE`) | v2.5.1, repo commit `f6b7657` (2026-11-07) | SKILL.md section 5: brand-page structure and copy tells (from its SKILL.md and `references/copy-tells.md`). Paraphrased. |
 | gauntlet-loop | [robonuggets/gauntlet-loop](https://github.com/robonuggets/gauntlet-loop) | RoboNuggets (idea credited there to Matt Shumer) | CC BY 4.0 | repo commit `9b1975a1b8f0` (2026-08-05, "Credit Matt Shumer") | One idea in critique.md: name a quality bar, then compare blind against it. Rewritten, not copied. |
 
 ## What was copied and what was rewritten
@@ -40,6 +41,7 @@ Per Fable audit S5, do not bring these back during an update:
 - Generated project files: `PRODUCT.md`, `DESIGN.md` writing, surface briefs, `ui-registry.md`, `design-system/MASTER.md`. Project design memory lives in `context/UI_TOKENS.md` and `context/UI_RULES.md` only.
 - impeccable's 23 sub-commands and routing; ui-ux-pro-max's style catalogues, palettes, chart and stack sections, and native-app (iOS/Android) rules.
 - Image generation steps, comp/plate review flows, multi-agent critique orchestration.
+- taste-skill's kit and scripts (gate.mjs Stop hook, deal/start/moments dealers, copy-lint, consistency checker, photo search, assets) and its one-section-per-screen and "deal, never choose" rules.
 
 Settled choices that differ from the newest upstream (keep unless the user decides otherwise):
 - **Motion uses transform and opacity only.** impeccable v4.8 allows blur, clip-path and mask when smooth; the audit chose the stricter rule.
@@ -64,3 +66,4 @@ Run this when the user asks to update OmniUI, or about every three months. Work 
 ## Update log
 
 - 2026-11-12: first merge. Pulled latest upstreams the same day; took impeccable v4.8.2's craft-floor bans and browser-surface theming, frontend-design's five-look list and headline-accent tell, ui-ux-pro-max's WCAG 2.2 items (focus not obscured, drag alternative, 24 px web target minimum, accessible authentication, redundant entry, IME Enter), cancellable transitions and error-summary focus rule. imprint had been removed upstream, so its June copy was used.
+- 2026-11-13: added taste-skill v2.5.1 (MIT): brand-page structure rules and a condensed copy-tells list in SKILL.md section 5. Skipped its scripts, hook, asset kit and per-trade layout system.

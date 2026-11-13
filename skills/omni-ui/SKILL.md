@@ -140,7 +140,21 @@ Reflex check at two levels: if the theme and palette can be guessed from the cat
 
 Also refuse: the warm cream/sand body background by reflex (OKLCH L 0.84 to 0.97, C below 0.06, hue 40 to 100), fade-and-slide-up on every section, and a hover transition on every card.
 
-Credit: bans adapted from impeccable by Paul Bakaus (Apache-2.0) and frontend-design by Anthropic (Apache-2.0). See `SOURCES.md`.
+**Brand-page structure** (from taste-skill)
+- Show the real thing: real photographs of the product, people or place, and software's own UI as live HTML doing its actual job (a code-review tool shows a diff with its Accept action), never a generic dashboard mock or drawn stand-in. A real product's icon, never a redrawn look-alike.
+- No caption under an image explaining or labelling it; photo credits go in one footer line.
+- Equal left and right content edges at every width: every block sits on the container or grid lines.
+- One object never carries the page: the hero subject leads at most three sections; other sections get a different kind of visual (use, detail, context, a type moment).
+- Shader effects, 3D scenes and animated grounds only where the subject is technical (software, games, hardware). A cafe, shop or studio gets photographs, flat colour and type.
+
+**Copy tells** (from taste-skill; a cluster is the signal, not one hit). Each stands in for a fact the brief should supply:
+- Hype words: elevate, unlock, unleash, empower, seamless, effortless, cutting-edge, robust, powerful, world-class, game-changing, transformative. Literal trade use stays (a climbing harness).
+- Stock lines: "Unlock the power of", "Say goodbye to", "Whether you're A or B", "Trusted by teams worldwide", "Ready to transform your X?", "X made simple", "It's not just X, it's Y".
+- Invented specifics: unsourced proof figures ("3x faster", "10,000+ teams"), a strip of three stats over one-word labels, polished testimonials, the default cast (Priya, Marcus, Acme, Lumen, Nimbus). Use only the brief's facts and names; without them, a plainer line.
+- Shapes: two-fragment headings ("Twelve rooms. Three ways to stay."), contrast frames ("isn't a slogan here", "rather than", "without the"), negation runs ("No forms, no back-and-forth."), a dry quip closing every paragraph, virtue words about ourselves (honest, thoughtful, intentional, genuinely), process talk ("Below, you'll find").
+- Over-correction counts too: banning dashes breeds comma splices; banning hype breeds calm words (quietly, steady). Replace the adjective with a fact.
+
+Credit: bans adapted from impeccable by Paul Bakaus (Apache-2.0) and frontend-design by Anthropic (Apache-2.0); brand-page structure and copy tells paraphrased from taste-skill by Leonxlnx (MIT). See `SOURCES.md`.
 
 ## 6. Verify
 
