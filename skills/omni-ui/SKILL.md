@@ -7,6 +7,8 @@ description: "Design, build, restyle, critique or audit any web UI: pages, landi
 
 One skill for making web UI that looks intentional, reads clearly and works for everyone. Text only: no scripts, no generators, no registry files.
 
+**How to use it: a reference, not a rulebook.** Most of this skill is merged from other people's design skills (see `SOURCES.md`). Those were written against older models' habits and are sometimes wrong for a given page. Treat the taste rules (sections 3 to 5: colour, type, layout, bans, copy tells) as defaults and a checklist of common failure modes. When your own judgment, the brief or the project's existing look says something else would clearly be better, do that and say why in one line. Firm only: accessibility (contrast, keyboard, focus, touch targets, reduced motion), the user's own instructions, and the verify step (section 6).
+
 ## 1. Modes
 
 Pick the mode from the request, then load only the reference it names.
@@ -103,12 +105,12 @@ Theme the browser surfaces you did not draw: text selection (`::selection`), car
 
 ## 5. Bans: the AI-slop test
 
-If someone could look at the result and say "AI made that" without doubt, it has failed. Match and refuse: if you are about to write one of these, rewrite the element with a different structure.
+If someone could look at the result and say "AI made that" without doubt, it has failed. The lists below are the usual reasons: when you reach for one of these by reflex, stop and consider a different structure. They are tells to check against, not prohibitions; if one is genuinely the best choice for this page, keep it and say why.
 
-The brief's own words win: if it pins a look that appears below, build it. The lists are for choices the brief leaves free. The one exception is the eyebrow, which no brief earns back.
+The brief's own words win: if it pins a look that appears below, build it. The lists are for choices the brief leaves free.
 
-**Hard ban**
-- **A kicker or eyebrow above a heading** (small tracked all-caps label such as "ABOUT", "PROCESS"). Delete it and let the heading speak.
+**Strongest tell**
+- **A kicker or eyebrow above a heading** (small tracked all-caps label such as "ABOUT", "PROCESS"). Usually delete it and let the heading speak.
 
 **Page scaffolds** (from impeccable's craft floor)
 - Same-size cards of icon + heading + text as the page structure. Nested cards are always wrong.

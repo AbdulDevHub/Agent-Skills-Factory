@@ -66,4 +66,5 @@ Run this when the user asks to update OmniUI, or about every three months. Work 
 ## Update log
 
 - 2026-11-12: first merge. Pulled latest upstreams the same day; took impeccable v4.8.2's craft-floor bans and browser-surface theming, frontend-design's five-look list and headline-accent tell, ui-ux-pro-max's WCAG 2.2 items (focus not obscured, drag alternative, 24 px web target minimum, accessible authentication, redundant entry, IME Enter), cancellable transitions and error-summary focus rule. imprint had been removed upstream, so its June copy was used.
+- 2026-11-13: user decision: the merged rules are a reference, not hard rules (future models are expected to need them less). SKILL.md now says so near the top; only accessibility, the user's instructions and the verify step are firm. Keep that framing in future merges.
 - 2026-11-13: added taste-skill v2.5.1 (MIT): brand-page structure rules and a condensed copy-tells list in SKILL.md section 5. Skipped its scripts, hook, asset kit and per-trade layout system.
