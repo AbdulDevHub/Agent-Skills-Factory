@@ -58,7 +58,7 @@ Then write the confirmed baseline into `context/UI_TOKENS.md` (values, grouped b
 
 ## 5. Report
 
-End with: the baseline written, the drift fixed (count and files), anything left on purpose, and a `ui-checker` run on the screens that changed. Visual fixes are not done until the check comes back (SKILL.md section 6).
+End with: the baseline written, the drift fixed (count and files), anything left on purpose, and a `ui-checker-agent` run on the screens that changed. Visual fixes are not done until the check comes back (SKILL.md section 6).
 
 ## Keeping it consistent
 

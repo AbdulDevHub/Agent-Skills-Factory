@@ -1,6 +1,6 @@
 # Critique and Audit
 
-Load for Critique or Audit mode. Report findings; change code only if the user asks. Read the source files and have `ui-checker` look at the live page before judging; a critique from code alone misses what the screen shows.
+Load for Critique or Audit mode. Report findings; change code only if the user asks. Read the source files and have `ui-checker-agent` look at the live page before judging; a critique from code alone misses what the screen shows.
 
 ## Contents
 - Name a quality bar first

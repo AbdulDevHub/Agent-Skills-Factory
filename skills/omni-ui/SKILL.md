@@ -164,7 +164,7 @@ Credit: bans adapted from impeccable by Paul Bakaus (Apache-2.0) and frontend-de
 
 Never report UI work as done before the check comes back.
 
-1. Send the page to the `ui-checker` agent with the URL (dev server or `file://`), what changed, and what right looks like. It checks 1280x800 and 390x844, light and dark when the site has both. Do not take screenshots in the main chat.
+1. Send the page to the `ui-checker-agent` with the URL (dev server or `file://`), what changed, and what right looks like. It checks 1280x800 and 390x844, light and dark when the site has both. Do not take screenshots in the main chat.
 2. Pre-delivery checklist (adapted from ui-ux-pro-max). Fix every miss before reporting:
    - [ ] Text contrast 4.5:1 and UI contrast 3:1, in light and in dark.
    - [ ] Keyboard: every control reachable, focus order matches visual order, focus ring visible, Escape closes overlays.
@@ -176,7 +176,7 @@ Never report UI work as done before the check comes back.
    - [ ] Console clean: no errors or warnings from your change.
    - [ ] Section 5 bans: none present.
 
-   If `ui-checker` returns FIX or any box stays unticked, fix it and return to step 1. Done when the checker says PASS and every box is ticked.
+   If `ui-checker-agent` returns FIX or any box stays unticked, fix it and return to step 1. Done when the checker says PASS and every box is ticked.
 3. If the project README shows a screenshot of what changed, refresh that screenshot in the same task.
 
 ## 7. Persist

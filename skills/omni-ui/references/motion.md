@@ -105,7 +105,7 @@ CSS transitions and `@keyframes` cover most UI. For sequences, layout animation 
 
 ## Check
 
-- Smooth at 60 fps on the target viewport; no jank in the `ui-checker` run.
+- Smooth at 60 fps on the target viewport; no jank in the `ui-checker-agent` run.
 - Feels responsive: nothing makes the user wait.
 - Reduced motion on: everything still works and nothing jumps.
 - Each animation can be explained in one sentence of purpose.

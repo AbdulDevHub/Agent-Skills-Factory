@@ -22,7 +22,7 @@ Runs fine on Sonnet at medium effort.
    - Title in Title Case.
    - The description matches the current features.
    - The tech stack mentions Claude Code.
-   - Screenshot: find the last commit that touched it (`git log -1 --format=%H -- <screenshot>`). Refresh it through the `ui-checker` agent, saved over the old path, when UI files changed since then (`git diff --name-only <commit>` plus untracked files from `git ls-files -o --exclude-standard`), or when the README references a screenshot that was never committed.
+   - Screenshot: find the last commit that touched it (`git log -1 --format=%H -- <screenshot>`). Refresh it through the `ui-checker-agent`, saved over the old path, when UI files changed since then (`git diff --name-only <commit>` plus untracked files from `git ls-files -o --exclude-standard`), or when the README references a screenshot that was never committed.
    - If steps 3-4 changed code files, re-run the fast `Verify:` and stop on failure.
 5. **GitHub metadata.** Check with `gh repo view --json description,repositoryTopics,homepageUrl`. The description starts with an emoji, topics are set, and homepage is set when there is a live site. Fix with `gh repo edit` (`--description`, `--add-topic`, `--homepage`).
 6. **Agent context.** Run `setup-agent-context` on the existing files (its merge path): refresh AGENTS.md and `context/PROGRESS_TRACKER.md`.

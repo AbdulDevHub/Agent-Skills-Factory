@@ -64,7 +64,7 @@ Run this when the user asks to update OmniUI, or about every three months. Work 
 4. **Keep only what helps here.** Take a change if it adds or corrects a concrete design rule (a new ban, a better number, a WCAG update, a clearer check) that fits an existing section. Skip anything on the "Deliberately left out" list, anything that only reorganises the upstream skill, and anything that re-decides a settled choice above (raise those with the user instead).
 5. **Merge into the right file** within its budget: SKILL.md stays at 250 lines or fewer with must-follow rules near the top; references stay near their sizes (build 150, critique 150, motion 100, a11y-checklist 120, consistency 80). Replace an older rule rather than adding a second version of it.
 6. **Record it.** Update the "Version merged" column with the new commit and date, and add a line under "Update log" saying what was taken and what was skipped.
-7. **Check the result**: run the `reviewer` agent on the diff, and tell the user what changed. Commit only when the user asks.
+7. **Check the result**: run the `reviewer-agent` on the diff, and tell the user what changed. Commit only when the user asks.
 
 ## Update log
 
