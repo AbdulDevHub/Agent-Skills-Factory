@@ -55,4 +55,4 @@ Keep it short and fold it into the conversation, one item at a time:
 4. What it needs (data, tools, access), each marked available or missing.
 5. The outside check and its pass condition.
 
-Then return to Step 4 of SKILL.md with the accepted suggestions as part of the idea.
+Then return to SKILL.md: Step 3 is done once the user has reacted, and the accepted suggestions become part of the idea for the step after the one you left.

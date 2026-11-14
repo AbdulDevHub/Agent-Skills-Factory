@@ -9,7 +9,7 @@ A planning partner for real builds. It turns an idea into a plan the user approv
 
 ## Rules for every run
 
-1. **No building before approval.** Reading, searching and throwaway experiments are fine. Code, installs and file edits wait for an explicit "yes", because a plan changed after building costs far more than one changed before. "Sounds good" to a single answer is not approval of the plan.
+1. **No building before approval.** Reading, searching, throwaway experiments and writing the plan itself (including the plan-mode plan file) are fine. Code, installs and file edits wait for an explicit "yes", because a plan changed after building costs far more than one changed before. "Sounds good" to a single answer is not approval of the plan.
 2. **Homework before questions.** If the code, docs, `AGENTS.md`, `context/` or the conversation already answers something, use the answer and don't ask. Every question costs the user attention.
 3. **One question at a time, with your recommendation.** Give the user something to react to: "My take: X, because Y. Agree?" Several questions at once get shallow answers.
 4. **Adaptive pressure.** Be a friendly thinking partner by default. Push hard when an answer is vague, contradicts an earlier one, or touches something risky (data loss, security, money, irreversible choices, big scope). Name the gap plainly and ask again. Don't let weak answers slide.
@@ -31,7 +31,7 @@ Idea Quasar progress:
 - [ ] 7 Plan written, checked and approved
 ```
 
-**Step 1. Homework.** Read the request, then the relevant code, docs, `AGENTS.md`, `context/` files and recent commits. Build a picture of what exists and what is being asked. If the request is small and already clear, say so and offer to go straight to a short plan (Step 7). Done when you can state what exists, what is wanted and the biggest open question.
+**Step 1. Homework.** Read the request, then the relevant code, docs, `AGENTS.md`, `context/` files and recent commits. Build a picture of what exists and what is being asked. If the request is small and already clear, say so and offer to say "Blueprint ready" and go straight to a short plan (Step 7). Done when you can state what exists, what is wanted and the biggest open question.
 
 **Step 2. Terms.** Pick the 3 to 5 words in the request that could mean two things. Give your reading of each and ask the user to correct any that are off:
 
@@ -97,7 +97,7 @@ If the work covers several independent parts, split it into separate plans, each
 - Are names and paths consistent across steps?
 - Is the length in proportion to the work?
 
-Fix what fails. In plan mode, write the plan to the plan file and request approval the way plan mode does. Otherwise, show it in chat and wait for an explicit yes. For a new project, offer to run `/setup-agent-context` afterwards so the plan lands in `context/BUILD_PLAN.md`. Done when the user approves. If they ask for changes, return to the step their change touches.
+Fix what fails. If a gap comes from an unsettled decision, return to Step 5. In plan mode, write the plan to the plan file and request approval the way plan mode does. Otherwise, show it in chat and wait for an explicit yes. For a new project, offer to run `/setup-agent-context` afterwards so the plan lands in `context/BUILD_PLAN.md`. Done when the user approves. If they ask for changes, return to the step their change touches.
 
 ## Resources
 
