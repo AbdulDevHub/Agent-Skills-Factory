@@ -1,8 +1,4 @@
 {
-    "architect":  {
-                      "fingerprint":  "e59f0800d8f2baf5bf2fa5d7d6e6c1011435a353",
-                      "lockHash":  "130d344ca6db1938f6a28c03fa3b3a4e45573042"
-                  },
     "diagram-maker":  {
                           "fingerprint":  "9cdd3ec19b3cd6aca2d7e959f5ce46043bc3b389",
                           "lockHash":  "2e6f6de8eb973004ab86c5d480a60463c6bfe6f6"
