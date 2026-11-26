@@ -1,11 +1,11 @@
 ---
-name: ship
+name: polish-push
 description: "End-of-day polish and publish for the current repo: SEO and social check, README and screenshot refresh, agent context update, gitmoji commit, push. Use for 'ship it', 'polish and push', 'wrap up this repo', or any request that bundles SEO, README, commit and push."
 ---
 
-# Ship
+# Polish Push
 
-Polish the current repo and publish it in one pass. Asking for `ship` is the user's go-ahead to commit and push. Skip any step that does not apply. Stop only when a step fails (say which step and why) or when the repo's AGENTS.md asks for confirmation before a push.
+Polish the current repo and publish it in one pass. Asking for `polish-push` is the user's go-ahead to commit and push. Skip any step that does not apply. Stop only when a step fails (say which step and why) or when the repo's AGENTS.md asks for confirmation before a push.
 
 Runs fine on Sonnet at medium effort.
 
@@ -29,5 +29,5 @@ Runs fine on Sonnet at medium effort.
 7. **Commit and push.**
    - Re-run the step 1 checks on everything that will be committed (steps 3-6 add new text); stop on any hit.
    - Stage deliberately (`git add -A` once the checks pass), then commit with `gitmoji-commit`, splitting unrelated changes.
-   - `gitmoji-commit` never pushes; `ship` does the push itself: `git push` to the existing remote and branch. Never force-push and never create a remote. If the repo's AGENTS.md says to push only after the user confirms, ask first.
+   - `gitmoji-commit` never pushes; `polish-push` does the push itself: `git push` to the existing remote and branch. Never force-push and never create a remote. If the repo's AGENTS.md says to push only after the user confirms, ask first.
 8. **Report**, five bullets or fewer: what changed, how it was verified, the commit(s), and the repo or live link.
