@@ -40,7 +40,7 @@ On Claude Code older than 2.1.275, add the marketplace first:
 
 | Skill | What it does |
 | --- | --- |
-| [`idea-quasar`](./skills/idea-quasar/SKILL.md) | Turns a rough idea into an approved build plan: homework first, term check, a "better, not bigger" ambition pass, approaches with trade-offs, then one-at-a-time grilling and a written plan. Merged from grill-me, architect, be-ambitious and superpowers (all MIT, credited in the skill). |
+| [`pick-my-brain`](./skills/pick-my-brain/SKILL.md) | Questions you before building. Full mode turns a rough idea into an approved build plan: homework first, term check, a "better, not bigger" ambition pass, approaches with trade-offs, then one-at-a-time grilling and a written plan. Quick mode settles the 1 to 3 unclear decisions in a mid-build change. Merged from grill-me, architect, be-ambitious and superpowers (all MIT, credited in the skill). |
 | [`setup-agent-context`](./skills/setup-agent-context/SKILL.md) | Scaffolds or refreshes `AGENTS.md` plus a `context/` folder for new or existing codebases. |
 | [`gitmoji-commit`](./skills/gitmoji-commit/SKILL.md) | Commits staged files with a gitmoji + conventional-commit message (`🐛 fix: ...`), splitting unrelated changes into separate commits. Never pushes. Can also rewrite a whole repo's old commit messages into the same style. |
 | [`polish-push`](./skills/polish-push/SKILL.md) | End-of-day polish and publish for a repo: secret scan, verify, SEO check, README and screenshot refresh, GitHub metadata, agent context update, gitmoji commit and push. |

@@ -1,11 +1,16 @@
 ---
-name: idea-quasar
-description: "Turns a rough idea, feature or project into a tested, approved build plan before any code is written: does its homework in the codebase, aligns on terms, pushes the idea to be better (not bigger), compares approaches, then grills the user one decision at a time and writes the plan. Use when the user types /idea-quasar, wants to plan, brainstorm or design a feature or project before building, says \"grill me on this build\", \"stress-test my plan before coding\", \"think bigger\" or \"be ambitious\" about a build, or starts a new project in plan mode."
+name: pick-my-brain
+description: "Questions the user about what is unclear before building. Full mode turns a rough idea, feature or project into an approved build plan: homework in the codebase, term check, a better-not-bigger ambition pass, approaches, one-at-a-time grilling and a written plan. Quick mode, mid-build, asks only about the 1 to 3 uncertain decisions in a suggested fix, feature or change, then carries on. Use when the user types /pick-my-brain, says \"help me plan this out\", \"I am unsure about this\", \"I'm not sure what to do\", \"pick my brain\", wants to plan, brainstorm or design a feature or project before building, says \"think bigger\" or \"be ambitious\" about a build, or starts a new project in plan mode."
 ---
 
-# Idea Quasar
+# Pick My Brain
 
-A planning partner for real builds. It turns an idea into a plan the user approves, and on the way makes the idea sharper and more ambitious in quality, not scope. Nothing gets built until the user explicitly approves the plan.
+A thinking partner that questions the user before building. It has two modes:
+
+- **Full mode** (new project, big feature, "help me plan this out"): turns an idea into a plan the user approves, and on the way makes the idea sharper and more ambitious in quality, not scope. Nothing gets built until the user explicitly approves the plan.
+- **Quick mode** (mid-build, a suggested fix, feature or change, "I am unsure about this"): settles only the uncertain decisions, then gets back to work. See [Quick mode](#quick-mode).
+
+**Pick the mode.** Use full mode for a new project, a change touching several parts of the system, or when the user asks to plan. Use quick mode when work is already underway and the request is one fix, feature or change. When unsure, start in quick mode and switch to full mode if the questions turn up more than 3 open decisions; say you are switching.
 
 ## Rules for every run
 
@@ -16,12 +21,21 @@ A planning partner for real builds. It turns an idea into a plan the user approv
 5. **Better, not bigger.** Every ambitious suggestion must raise the outcome, the standard or the perspective. Drop anything that only adds scope.
 6. **Never invent data or access.** If a tool, dataset or account is missing, name it and what it would unlock. Ask before any step that costs money, can't be undone or replaces what the user asked for.
 
-## Workflow
+## Quick mode
+
+For a fix, feature or change suggested while building. Rules 2, 3, 4 and 6 apply; Rule 1 becomes "no building until the open questions are settled".
+
+1. **Homework.** Read only the code and context the change touches. Answer what you can from it.
+2. **List the unknowns.** Name the 1 to 3 decisions that would change what gets built and that the code can't answer. If there are none, say so in one line, state your plan in 1 to 3 bullets and start.
+3. **Ask one at a time**, highest impact first, in the same format as Step 5 below ("My take: X, because Y. Agree?").
+4. **Confirm and go.** Sum up the agreed approach in 1 to 3 bullets and carry on building. No written plan, ambition pass or approaches step, unless the user asks for one.
+
+## Full mode workflow
 
 Copy this checklist and tick it off. Skip a step only when its "done when" line is already true.
 
 ```text
-Idea Quasar progress:
+Pick My Brain progress:
 - [ ] 1 Homework done
 - [ ] 2 Terms aligned
 - [ ] 3 Ambition pass
