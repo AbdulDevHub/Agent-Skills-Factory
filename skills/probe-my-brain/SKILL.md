@@ -1,9 +1,9 @@
 ---
-name: pick-my-brain
-description: "Questions the user about what is unclear before building. Full mode turns a rough idea, feature or project into an approved build plan: homework in the codebase, term check, a better-not-bigger ambition pass, approaches, one-at-a-time grilling and a written plan. Quick mode, mid-build, asks only about the 1 to 3 uncertain decisions in a suggested fix, feature or change, then carries on. Use when the user types /pick-my-brain, says \"help me plan this out\", \"I am unsure about this\", \"I'm not sure what to do\", \"pick my brain\", wants to plan, brainstorm or design a feature or project before building, says \"think bigger\" or \"be ambitious\" about a build, or starts a new project in plan mode."
+name: probe-my-brain
+description: "Questions the user about what is unclear before building. Full mode turns a rough idea, feature or project into an approved build plan: homework in the codebase, term check, a better-not-bigger ambition pass, approaches, one-at-a-time grilling and a written plan. Quick mode, mid-build, asks only about the 1 to 3 uncertain decisions in a suggested fix, feature or change, then carries on. Use when the user types /probe-my-brain, says \"help me plan this out\", \"I am unsure about this\", \"I'm not sure what to do\", \"probe my brain\", \"pick my brain\", wants to plan, brainstorm or design a feature or project before building, says \"think bigger\" or \"be ambitious\" about a build, or starts a new project in plan mode."
 ---
 
-# Pick My Brain
+# Probe My Brain
 
 A thinking partner that questions the user before building. It has two modes:
 
@@ -35,7 +35,7 @@ For a fix, feature or change suggested while building. Rules 2, 3, 4 and 6 apply
 Copy this checklist and tick it off. Skip a step only when its "done when" line is already true.
 
 ```text
-Pick My Brain progress:
+Probe My Brain progress:
 - [ ] 1 Homework done
 - [ ] 2 Terms aligned
 - [ ] 3 Ambition pass
