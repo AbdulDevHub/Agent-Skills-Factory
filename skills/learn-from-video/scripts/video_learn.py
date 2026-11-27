@@ -22,13 +22,13 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 
 def run(cmd: list[str]) -> subprocess.CompletedProcess:
-    return subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    return subprocess.run(cmd, capture_output=True, text=True, check=False, encoding="utf-8", errors="replace")
 
 
 def vtt_to_lines(vtt: Path) -> list[str]:
     """Collapse YouTube auto-caption VTT (rolling duplicates) into timestamped lines."""
     out, last = [], ""
-    stamp = None
+    stamp = "[0:00]"
     for raw in vtt.read_text(encoding="utf-8", errors="replace").splitlines():
         m = re.match(r"(\d+):(\d+):(\d+)\.\d+ -->", raw)
         if m:
@@ -90,40 +90,50 @@ def main() -> None:
             f"## Description\n{info.get('description', '')}\n", encoding="utf-8")
 
         txt = a.out / f"{vid}.txt"
+        source = "existing file" if txt.exists() and txt.stat().st_size > 10 else None
         vtts = list(a.out.glob(f"{vid}*.vtt"))
-        if vtts:
-            txt.write_text("\n".join(vtt_to_lines(vtts[0])) + "\n", encoding="utf-8")
-            for v in vtts:
-                v.unlink()
+        lines = vtt_to_lines(vtts[0]) if vtts and not source else []
+        for v in vtts:
+            v.unlink()
+        if lines:
+            txt.write_text("\n".join(lines) + "\n", encoding="utf-8")
             source = "captions"
 
-        need_video = not a.no_frames or not txt.exists()
         mp4 = a.out / f"{vid}.mp4"
-        if need_video:
-            # 2. Low-res video: enough for slides and on-screen text, small on disk.
-            run(common + ["-f", "bv*[height<=480]+ba/b[height<=480]", "--merge-output-format", "mp4", url])
-            if not mp4.exists():
-                print(f"FAILED video download for {url}")
-                continue
+        pcm = a.out / f"{vid}.pcm"
+        try:
+            if not a.no_frames or not source:
+                # 2. Low-res video: enough for slides and on-screen text, small on disk.
+                run(common + ["-f", "bv*[height<=480]+ba/b[height<=480]", "--merge-output-format", "mp4",
+                              "--remux-video", "mp4", url])
+                if not mp4.exists():
+                    print(f"FAILED video download for {url}")
+                    continue
 
-        if not txt.exists():
-            # 3. Local transcription.
-            pcm = a.out / f"{vid}.pcm"
-            run([ffmpeg, "-loglevel", "error", "-y", "-i", str(mp4), "-ac", "1", "-ar", "16000", "-f", "s16le", str(pcm)])
-            whisper(pcm, txt, a.model)
-            pcm.unlink()
-            source = "whisper"
+            if not source:
+                # 3. Local transcription.
+                r = run([ffmpeg, "-loglevel", "error", "-y", "-i", str(mp4), "-ac", "1", "-ar", "16000",
+                         "-f", "s16le", str(pcm)])
+                if r.returncode != 0 or not pcm.exists():
+                    print(f"FAILED audio extraction for {url}: {r.stderr.strip()[:300]}")
+                    continue
+                whisper(pcm, txt, a.model)
+                source = "whisper"
 
-        if not a.no_frames:
-            # 4. Contact sheets: 4 frames per image, so a 12-minute video is about 9 images.
-            fdir = a.out / f"{vid}_frames"
-            fdir.mkdir(exist_ok=True)
-            run([ffmpeg, "-loglevel", "error", "-i", str(mp4), "-vf",
-                 f"fps=1/{a.every},scale=640:-1,tile=2x2", str(fdir / "s%02d.jpg")])
+            if not a.no_frames:
+                # 4. Contact sheets: 4 frames per image, so a 12-minute video is about 9 images.
+                fdir = a.out / f"{vid}_frames"
+                fdir.mkdir(exist_ok=True)
+                run([ffmpeg, "-loglevel", "error", "-y", "-i", str(mp4), "-vf",
+                     f"fps=1/{a.every},scale=640:-1,tile=2x2", str(fdir / "s%02d.jpg")])
 
-        if mp4.exists():
-            mp4.unlink()
-        print(f"OK {vid} | {info['title']} | transcript from {source} | {a.out}")
+            print(f"OK {vid} | {info['title']} | transcript from {source} | {a.out}")
+        except Exception as e:  # noqa: BLE001 - keep going with the other URLs
+            print(f"FAILED {url}: {e}")
+        finally:
+            # Never leave media behind, even on failure.
+            for f in [mp4, pcm, *a.out.glob(f"{vid}.f*"), *a.out.glob(f"{vid}*.part")]:
+                f.unlink(missing_ok=True)
 
 
 if __name__ == "__main__":
