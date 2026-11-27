@@ -45,6 +45,11 @@ Read what already exists, and reuse it:
 - At least one real stylesheet, theme or component file. Use the existing tokens and components when they work; branch out only when the UX clearly wins.
 - If the project already committed to a brand colour, font or look, preserve it. The bans and reflex lists below apply to new choices, not to an identity that is already shipping.
 
+Targets and budget:
+- **Higher-quality runs.** When the user asks for a higher-quality, improved or "best possible" version, first ask for the budget: effort level, time, and how much usage it may spend. Work within it.
+- **Matching a reference.** When the user names a site or image to match, chase it closely. When they say how close you are ("about 60%"), trust their estimate over your own and keep going. The user rarely names one, so suggest a reference site when one clearly fits the brief.
+- **Visual directions (brand pages).** When a brand page's look is open, or the user asks for options, write 2 to 3 clearly different direction prompts, each describing one full-page desktop mock (layout, palette, type, imagery, mood). Package them with `helper handoff` (free-helpers skill) for the user to paste into Gemini or Antigravity, and wait. The image they pick becomes the reference you build to. Skip for product UI and small fixes.
+
 Never create `PRODUCT.md`, `ui-registry.md` or `design-system/MASTER.md`. Project design memory lives only in `context/UI_TOKENS.md` and `context/UI_RULES.md` (section 7).
 
 ## 3. Plan before code
@@ -189,6 +194,7 @@ Update existing entries rather than appending duplicates. If `context/` does not
 ## 8. Pointers
 
 - UI kits, animated components and animation libraries: `~/.claude/reference/libraries.md` (Fancy / animated components, Animation).
+- Real-site references: the Inspo MCP (832 production sites with desktop and mobile captures, palettes, fonts and component crops; `recommend(brief)` returns a moodboard). Parked in the Toolbox; ask the user to switch it on when a brand page or redesign needs references.
 - Ready-made scroll, hover and ambient effects: cinematic-site-components (listed in `libraries.md`); use one effect as the signature, not five.
 - Charts and data visualisation: the `dataviz` skill.
 - Reference sites (free): oklch.com (OKLCH picker with gamut check), Radix Colors (12-step accessible scales with dark pairs), Realtime Colors (preview a palette and font pair on a live mock), Typewolf (fonts real sites use, Google Fonts pairings), Fontshare (free display fonts). Visual galleries are in `~/.claude/reference/tools.md`.

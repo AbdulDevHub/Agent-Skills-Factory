@@ -11,7 +11,7 @@ Read a video the way a careful note-taker would: what is said (transcript) plus 
 
 The user's StreamForge repo (private, `AbdulDevHub/StreamForge`) ships `bin/yt-dlp.exe` and `bin/ffmpeg.exe`.
 
-- Local clone: `C:\Users\kokok\Downloads\Code Vault\StreamForge`. If it is missing:
+- Local clone: `~/Downloads/Code Vault/StreamForge`. Any other yt-dlp + ffmpeg pair works the same way. If it is missing:
   `GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/AbdulDevHub/StreamForge.git`, then inside it `git lfs pull --include "bin/ffmpeg.exe"` (about 140 MB; skip ffplay/ffprobe to save LFS quota).
 - Never write downloads into the clone. Use a fresh, empty folder in the session scratchpad.
 
