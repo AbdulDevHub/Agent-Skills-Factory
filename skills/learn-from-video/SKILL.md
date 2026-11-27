@@ -11,14 +11,19 @@ Read a video the way a careful note-taker would: what is said (transcript) plus 
 
 The user's StreamForge repo (private, `AbdulDevHub/StreamForge`) ships `bin/yt-dlp.exe` and `bin/ffmpeg.exe`.
 
-- Local clone: `~/Downloads/Code Vault/StreamForge`. Any other yt-dlp + ffmpeg pair works the same way. If it is missing:
-  `GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/AbdulDevHub/StreamForge.git`, then inside it `git lfs pull --include "bin/ffmpeg.exe"` (about 140 MB; skip ffplay/ffprobe to save LFS quota).
-- Never write downloads into the clone. Use a fresh, empty folder in the session scratchpad.
+The user rarely needs this, so nothing is kept between runs: clone fresh each time into the session scratchpad, and delete it at the end (section 5).
+
+```bash
+GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 -q https://github.com/AbdulDevHub/StreamForge.git "<scratchpad>/StreamForge"
+git -C "<scratchpad>/StreamForge" lfs pull --include "bin/ffmpeg.exe"
+```
+
+The LFS pull fetches only ffmpeg (about 140 MB); skip ffplay/ffprobe to save LFS quota. Any other yt-dlp + ffmpeg pair works the same way. Never write downloads into the clone: use a separate, empty `--out` folder.
 
 ## 2. Run
 
 ```bash
-uv run --quiet --no-project --with faster-whisper python -I ~/.agents/skills/learn-from-video/scripts/video_learn.py --bin "<StreamForge>/bin" --out "<scratchpad>/videos" URL [URL ...]
+HF_HOME="<scratchpad>/hf" uv run --quiet --no-project --with faster-whisper python -I ~/.agents/skills/learn-from-video/scripts/video_learn.py --bin "<StreamForge>/bin" --out "<scratchpad>/videos" URL [URL ...]
 ```
 
 Per video it leaves `<id>.meta.md` (title, chapters, description with links), `<id>.txt` (timestamped transcript) and `<id>_frames/` (2x2 contact sheets, one frame per 20 s). Video and audio are deleted by the script. Flags: `--every 10` for denser frames on slide-heavy talks, `--no-frames` for talking-head videos, `--model medium.en` if names come out garbled. Run it in the background; two 12-minute videos take a few minutes on CPU.
@@ -37,11 +42,16 @@ Per video it leaves `<id>.meta.md` (title, chapters, description with links), `<
 
 ## 5. Clean up (always)
 
-Delete the whole `--out` folder before replying, even when a step failed, and say so in the reply. Keep: the StreamForge clone and the Whisper model cache (`~/.cache/huggingface`, about 0.5 GB, reused next time).
+Before replying, even when a step failed, delete all three and say so in the reply:
+- the `--out` folder;
+- the StreamForge clone;
+- the `<scratchpad>/hf` Whisper model folder (about 0.5 GB; `HF_HOME` keeps it out of `~/.cache`, where the guard hook blocks deletes).
+
+Use literal absolute paths in `rm -rf`; the guard hook blocks recursive deletes of paths built from shell variables.
 
 ## Gotchas
 
 - Captions often fail with HTTP 429 (rate limit); the script then transcribes locally. Don't retry captions in a loop.
-- `--js-runtimes node` prints "n challenge solving failed" warnings; the 480p download still works. If downloads start failing, the weekly StreamForge workflow may not have updated yt-dlp yet: `git -C <StreamForge> pull`.
+- `--js-runtimes node` prints "n challenge solving failed" warnings; the 480p download still works. If downloads start failing, the weekly StreamForge workflow may not have merged its yt-dlp update yet: check the repo's open pull requests.
 - `python -I` ignores `PYTHONIOENCODING`; scripts must call `sys.stdout.reconfigure(encoding="utf-8")` for emoji in titles.
 - faster-whisper's own decoder (PyAV) can crash with `metadata_errors`; the script avoids it by feeding raw 16 kHz samples from ffmpeg.
